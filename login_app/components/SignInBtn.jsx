@@ -1,23 +1,29 @@
 'use client';
 
-import { Button, Typography } from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Paper, Box, Button, Typography } from '@mui/material';
+import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 
 export default function SignInBtn() {
   return (
-    <Button     onClick={() => signIn('google')}
+    <Button     onClick={() => signIn('discord')}
                 variant='contained'
                 color='primary'
-                sx={{   borderRadius: '12px',
+                sx={{   bgcolor: '#5865F2', borderRadius: '12px',
                         p: '1rem', 
                         '&:hover': {
-                            backgroundColor: 'primary.light',
+                            backgroundColor: '#EB459E',
                         },
                 }}>
-        <LinkedInIcon sx={{ fontSize: 30, mr: '0.8rem'}} />
-            <Typography variant="button" sx={{ color: 'white' }}>
-                Sign in with LinkedIn
+        <Box  sx={{ fontSize: 30, mr: '0.8rem'}} />
+                
+                <Image  variant='contained' alt="logo_Discord"  width= '60' height='60'
+                src={"/login_app/images/clyde.png"} 
+                
+                 />
+ 
+            <Typography variant="button" sx={{  m:1, color: 'white' }}>
+                Inicia sesión con Discord
             </Typography>
     </Button>
   );

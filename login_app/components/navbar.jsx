@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+
 export default function Navbar() {
     const { status } = useSession();
     return (
@@ -36,12 +37,10 @@ export default function Navbar() {
                         <SearchIcon/>
                     </IconButton>
 
-                    {/* {status === 'authenticated' ? (
-                        <Button onClick={() => signOut()} color='inherit'>Sign Out</Button>
-                    ) : (
-                        <Button onClick={() => signIn('google')} color='inherit'>Sign In</Button>
-                    )}  */}
-    
+                    {status === 'authenticated' ? (
+                        <Button onClick={() => signOut()} color='inherit'>Cerrar Sesión</Button>
+                    ) : null }
+
                 </Toolbar>
             </AppBar>
         </Grid>
