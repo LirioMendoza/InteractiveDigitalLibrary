@@ -1,45 +1,51 @@
 'use client';
 
 import { useState } from 'react';
+import SelectStars from './selectStars';
+import SubmitButton from './submitButton';
 
 const CommentForm = ({ addComment }) => {
 
   const [rating, setRating] = useState(0);
+  const [title, setTitle] = useState('');
   const [comment, setComment] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleRatingChange = (newRating) => {
+    setRating(newRating);
+  };
+
+  const handleSubmit = (e, newRating) => {
     e.preventDefault();
     if (comment.trim() === '' || rating < 0 || rating > 5) {
       return;
     }
-    addComment({ comment, rating });
+    addComment({ comment, title, rating });
     setComment('');
-    setRating(0);
+    setRating(newRating);
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <SelectStars onRatingChange={handleRatingChange} />
       <label>
-        Calificación:
+        Title:
         <input
-          type="number"
-          value={rating}
-          onChange={(e) => setRating(parseInt(e.target.value))}
-          min="0"
-          max="5"
-          placeholder="Calificación (0-5)"
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="What's the central theme of your comment?"
         />
       </label>
       <label>
-        Comentario:
+        Comments:
         <input
           type="text"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          placeholder="Escribe un comentario..."
+          placeholder="Write a comment..."
         />
       </label>
-      <button type="submit">Agregar Comentario</button>
+      <SubmitButton label="Add comment"/>
     </form>
   );
 };

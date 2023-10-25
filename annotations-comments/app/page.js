@@ -16,8 +16,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <h1>App de Comentarios</h1>
+        <h2>Leave your opinion about this reading material...</h2>
           <CommentForm addComment={addComment} />
+          <submitButton/>
           <CommentList comments={comments} />
         </div>
     </main>
