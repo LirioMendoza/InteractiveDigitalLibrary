@@ -15,7 +15,7 @@ const SelectStars = ({ onRatingChange }) => {
     <div>
       {[1, 2, 3, 4, 5].map((index) => (
         <span key={index} onClick={() => handleClick(index)}>
-          {index <= rating ? <StarIcon /> : <StarBorderIcon />}
+          {index <= rating ? <StarIcon color="secondary" /> : <StarBorderIcon color="secondary" />}
         </span>
       ))}
     </div>
