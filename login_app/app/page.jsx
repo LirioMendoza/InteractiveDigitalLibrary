@@ -1,20 +1,18 @@
 import UserInfo from '@/components/user-info';
 
-
-import { Button, Container, Grid, TextField, Box } from '@mui/material';
+import { Grid, } from '@mui/material';
 
 export default function Home() {
   return (
 
-<Grid 
-      container
+  <Grid container
       justifyContent='center'
       alignItems='center'
-      style={{ height: '100vh', marginTop: '-12px' }}
-    >
-      <UserInfo />
+      style={{ height: '100vh', 
+              marginTop: '-12px' }}>
 
-    </Grid>
+    <UserInfo />
+  </Grid>
 
   );
 }
