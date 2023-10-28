@@ -2,22 +2,23 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemTex
 
 
 
-export default function NavListDrawer({navLinks}){
+export default function NavListDrawer({navArrayLinks, NavLink, setOpen}){
     return (
         <Box sx={{width: 250}}>
             
             <nav>
                 <List>
                     {
-                        navLinks.map(item => (
+                        navArrayLinks.map(item => (
 
                             <ListItem 
                             disablePadding 
                             key={item.title}
                             > 
-                             <ListItemButton
-                                component="a"
-                                href={item.path}
+                            <ListItemButton
+                                component={NavLink}
+                                to={item.path}
+                                onClick={() => setOpen(false)}
                             >
                                 <ListItemText>{item.title}</ListItemText>
                             </ListItemButton>
