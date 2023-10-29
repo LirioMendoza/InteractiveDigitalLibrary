@@ -4,11 +4,12 @@ import React from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { red } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 
 const openPopup = (url, title, width, height) => {
   const left = (window.screen.width - width) / 2;
   const top = (window.screen.height - height) / 2;
-  window.open(
+  window.open( 
     url,
     title,
     `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
@@ -57,23 +58,24 @@ const containerPdf = (key) => {
     const ind = index(key, books);
     return(
       <div>
-        <a href={"#"+ ind} onClick={() => openPopup(books.get(key), 'PDF Popup', 800, 600) }>
+        <Link href={"#"+ ind} 
+          onClick={() => openPopup(books.get(key), 'PDF Popup', 800, 600) }>
           <PictureAsPdfIcon 
           sx={{color : red[500],
               fontSize: 30,   
-          }}>
-          </PictureAsPdfIcon>  
-          <Typography variant="h6" gutterBottom>
+          }} data-testid = 'pdf-icon'>
+          </PictureAsPdfIcon> 
+          <Typography variant="h6" gutterBottom >
             {key}
-          </Typography>      
-        </a>
+          </Typography>
+        </Link>
       </div>
     );
   }
 };
 
 const Page = () => {
-  const key = "Alicia a Través del Espejo";
+  const key = "Rayuela";
 
   return (
     <div>
