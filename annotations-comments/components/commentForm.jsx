@@ -7,6 +7,25 @@ import Stack from '@mui/material/Stack';
 
 import SelectStars from './selectStars';
 import SubmitButton from './submitButton';
+import { createTheme, ThemeProvider } from '@mui/material/';
+
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#29a493',
+      dark: '#1C7266',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#7c2ec1',
+      light:'#9657CD',
+      dark: '#562087',
+      contrastText: '#fff',
+    },}, 
+  }
+  );
+
 
 const CommentForm = ({ addComment }) => {
 
@@ -30,14 +49,16 @@ const CommentForm = ({ addComment }) => {
 
   return (
     <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto', textAlign: 'center' }}>
+      <ThemeProvider theme={theme}>
       <FormControl fullWidth margin="normal">
       <Stack direction="row" spacing={2} justifyContent="center">
-        <InputLabel>Rating</InputLabel>
+        <InputLabel >Rating</InputLabel>
         <SelectStars onRatingChange={handleRatingChange} />
       </Stack>
       </FormControl>
       <FormControl fullWidth margin="normal">
         <TextField
+        required
           type="text"
           value={title}
           label="Title"
@@ -48,6 +69,7 @@ const CommentForm = ({ addComment }) => {
       </FormControl>
       <FormControl fullWidth margin="normal">
         <TextField
+        required
           type="text"
           value={comment}
           label="Comment"
@@ -59,6 +81,7 @@ const CommentForm = ({ addComment }) => {
         />
       </FormControl>
       <SubmitButton label="Add comment"/>
+      </ThemeProvider>
     </form>
   );
 };
