@@ -1,13 +1,33 @@
-import {createRoot} from 'react-dom/client';
-import App from './App';
-import {BrowserRouter as Router} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client"
+import App from "./page";
 
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+import "-/global.css"
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "004d40"
+    },
+    secondary: {
+      main: "#b500d6"
+    },
+  },
+});
 
 
-root.render(
-  <Router>
-    <App />
-  </Router>
-);
+import { BrowserRouter } from "react-router-dom";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <CssBaseline />
+      <App />
+    </BrowserRouter>
+    </ThemeProvider>
+  </React.StrictMode>
+
+)
