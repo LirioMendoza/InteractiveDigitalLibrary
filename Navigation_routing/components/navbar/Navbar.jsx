@@ -24,7 +24,7 @@ export default function Navbar({navArrayLinks}){
                     <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" sx={{flexGrow: 1}}>
-                    Libreary
+                    Library
                 </Typography>
 
                 <Box sx={{ display: {xs: "none", sm: "block" }}}> 

@@ -1,40 +1,42 @@
+
 "use client";
-import Navbar from "@/components/navbar/Navbar";
-import { Container } from "@mui/material";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React from 'react';
-import Login from "./login/page";
-import Catalog from "./catalog/page";
-import Home from "./home/page";
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from '@/components/navbar/Navbar';
+
+const Home = lazy(() => import('./home/page'));
+const Login = lazy(() => import('./login/page'));
+const Catalog = lazy(() => import('./catalog/page'));
 
 const navArrayLinks = [
   {
-      title: "Home", path: "/"
+    title: 'Home',
+    path: '/'
   },
   {
-      title: "Login", path: "/login"
+    title: 'Login',
+    path: '/login'
   },
   {
-      title: "Catalog", path: "/catalog"
+    title: 'Catalog',
+    path: '/catalog'
   }
-]
+];
 
-export default function App(){
+export default function App() {
   return (
     <>
-    <Router>
-    <Navbar navArrayLinks={navArrayLinks}/>
-    
-    <Container sx={{ mt: 5}}>
-   
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/catalog" element={<Catalog />} />
-      </Routes>
-      
-    </Container>
-    </Router>
+      <Router>
+        <Navbar navArrayLinks={navArrayLinks} />
+
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/catalog" element={<Catalog />} />
+          </Routes>
+        </Suspense>
+      </Router>
     </>
   );
 }
