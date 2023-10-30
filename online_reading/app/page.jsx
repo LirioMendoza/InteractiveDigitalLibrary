@@ -75,7 +75,7 @@ const containerPdf = (key) => {
 };
 
 const Page = () => {
-  const key = "Rayuela";
+  const key = "Cocina mexicana";
 
   return (
     <div>

@@ -55,11 +55,11 @@ describe('Reading PDF', () => {
       const height = 600;
       const left = (window.screen.width - width) / 2;
       const top = (window.screen.height - height) / 2;
-      const link = screen.queryByText(books[0].key);
+      const link = screen.queryByText(book.key);
       act(() => {
         link.click();
       });
-      expect(windowOpenSpy).toHaveBeenLastCalledWith(books[0].value, 
+      expect(windowOpenSpy).toHaveBeenLastCalledWith(book.value, 
         'PDF Popup', `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`);
       windowOpenSpy.mockRestore();
     });
