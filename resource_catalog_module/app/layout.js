@@ -1,8 +1,4 @@
 import { Inter } from 'next/font/google'
-import './globals.css'
-
-import  BasicAppBar from '@/components/basic-app-bar';
-import BasicAppGrid from '@/components/basic-app-grid';
 
 const inter = Inter({ subsets: ['latin'] })
 
