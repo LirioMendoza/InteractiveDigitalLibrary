@@ -15,12 +15,14 @@
     "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
     "@react-pdf/renderer": "^3.1.14",
+    "file-server": "^2.2.1",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "13.5.6"
+    "eslint-config-next": "13.5.6",
+    "file-loader": "^6.2.0"
   }
 }
