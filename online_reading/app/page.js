@@ -1,12 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import { red } from '@mui/material/colors';
-import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-import Button from '@mui/material/Button';
-import PDFViewer from '@/components/PDFViewer';
+import { Button, Grid, Typography, Color } from '@mui/material';
+
+const PdfRead = lazy(() => import('./pdfRead/pdf-viewer'));
 
 const openPDFViewer = (url, title, width, height) => {
   const left = (window.screen.width - width) / 2;
@@ -19,10 +18,12 @@ const openPDFViewer = (url, title, width, height) => {
 };
 
 const containerPdf = () => {
+  const jsFileUrl = './pdfRead/pdf-viewer.js';
+  
   return(
     <>
       <Button
-          onClick={() => openPDFViewer("/pdf-viewer", 'PDF Popup', 800, 600)}
+          onClick={() => openPDFViewer(jsFileUrl, 'PDF Popup', 800, 600)}
           variant="contained"
           color="primary"
           startIcon={<PictureAsPdfIcon />}
@@ -41,11 +42,10 @@ const Page = () => {
       <div>
         <h1>BOOKS</h1>
         {containerPdf()}
-      </div>
-    
+
+        <PdfRead />
+      </div>    
     </>
-    
-    
   );
 };
 
