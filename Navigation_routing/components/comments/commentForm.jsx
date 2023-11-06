@@ -39,7 +39,7 @@ const CommentForm = ({ addComment }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("INFO: Trying to submit comment form.");
+    console.info({level: "INFO", message: "Trying to submit comment form."});
     try {
       if (title.trim() === '' || comment.trim() === '' || rating < 0 || rating > 5) {
         throw new Error("Invalid arguments");
@@ -48,13 +48,13 @@ const CommentForm = ({ addComment }) => {
       setComment('');
       setTitle('');
       setRating(0);
-      console.log("SUCCES: Comment form submitted.");
-    } catch (error) {
-      console.error("ERROR:", error.message);
+      console.log({level: "SUCCESS", message: "Comment form submitted."});
+    }catch (error) {
+      console.error({level: "WARNING", message: error.message, error});
     }
-    console.info("DEBUG: Rating value:", rating);
-    console.info("DEBUG: Title:", title);
-    console.info("DEBUG: Comment:", comment);
+    console.info({level: "DEBUG", message: "Rating value.", data: rating});
+    console.info({level: "DEBUG", message: "Title", data: title});
+    console.info({level: "DEBUG", message: "Comment text", data: comment});
   };
 
   return (
