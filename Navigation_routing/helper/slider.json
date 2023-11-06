@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "image": "https://m.media-amazon.com/images/I/7185CkaIBVL._AC_UF1000,1000_QL80_.jpg",
+        "title":"book 1"
+    },
+     
+    {
+        "id":2,
+        "image": "https://www.planetadelibros.com.mx/usuaris/libros/fotos/314/m_libros/portada_sor-juana-en-la-cocina_monica-lavin_202105212241.jpg",
+        "title":"book 2"
+
+    },
+
+    {
+        "id":3,
+        "image": "https://http2.mlstatic.com/D_NQ_NP_606457-MLM49297976616_032022-O.webp",
+        "title":"book 3"
+
+    }
+
+]

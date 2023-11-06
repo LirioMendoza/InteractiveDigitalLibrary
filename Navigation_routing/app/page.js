@@ -3,6 +3,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
+import Carousel from "../components/navbar/Carousel";
 
 const Home = lazy(() => import('./home/page'));
 const Login = lazy(() => import('./login/page'));
@@ -28,7 +29,7 @@ export default function App() {
     <>
       <Router>
         <Navbar navArrayLinks={navArrayLinks} />
-
+        
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,7 +37,11 @@ export default function App() {
             <Route path="/catalog" element={<Catalog />} />
           </Routes>
         </Suspense>
+        <Carousel/>
       </Router>
+      
+      
     </>
+    
   );
 }
