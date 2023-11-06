@@ -3,11 +3,13 @@ import React from 'react';
 import { Container } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
+
 import Carousel from "../components/navbar/Carousel";
 
 import Login from "./login/page";
 import Catalog from "./catalog/page";
 import Home from "./home/page";
+
 
 const navArrayLinks = [
   {
@@ -15,13 +17,14 @@ const navArrayLinks = [
     path: '/'
   },
   {
-    title: 'Login',
-    path: '/login'
+    title: 'Comment',
+    path: '/comments'
   },
   {
     title: 'Catalog',
     path: '/catalog'
   }
+  
 ];
 
 export default function App() {
@@ -32,12 +35,14 @@ export default function App() {
         <Container sx={{ mt: 5}}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/comments" element={<Comments />} />
+            <Route path="/catalog" element={<BasicAppGrid />} />
+            
           </Routes>
           <RouteRenderer />
         </Container>
       </Router>
+      
     </>
   );
 }
