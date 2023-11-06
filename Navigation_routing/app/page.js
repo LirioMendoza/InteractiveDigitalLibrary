@@ -4,7 +4,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
 import BasicAppGrid from '@/components/navbar/basic-app-grid';
-import Comments from '@/components/navbar/comments/comments';
+import Comments from '@/components/comments/comments';
 const Home = lazy(() => import('./home/page'));
 const Login = lazy(() => import('./login/page'));
 const Catalog = lazy(() => import('./catalog/page'));
