@@ -37,14 +37,24 @@ const CommentForm = ({ addComment }) => {
     setRating(newRating);
   };
 
-  const handleSubmit = (e, newRating) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (comment.trim() === '' || rating < 0 || rating > 5) {
-      return "Argumentos inválidos";
+    console.log("INFO: Trying to submit comment form.");
+    try {
+      if (title.trim() === '' || comment.trim() === '' || rating < 0 || rating > 5) {
+        throw new Error("Invalid arguments");
+      }
+      addComment({ comment, title, rating });
+      setComment('');
+      setTitle('');
+      setRating(0);
+      console.log("SUCCES: Comment form submitted.");
+    } catch (error) {
+      console.error("ERROR:", error.message);
     }
-    addComment({ comment, title, rating });
-    setComment('');
-    setRating(newRating);
+    console.info("DEBUG: Rating value:", rating);
+    console.info("DEBUG: Title:", title);
+    console.info("DEBUG: Comment:", comment);
   };
 
   return (
