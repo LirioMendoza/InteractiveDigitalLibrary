@@ -28,9 +28,10 @@ const theme = createTheme({
 
 
 const CommentList = ({ comments }) => {
-  console.log({ level: "INFO", message: 'Trying to show a list of comments.' });
+  console.info({ level: "INFO", message: 'Trying to show a list of comments.' });
   try{
-    if(comments){
+    console.info({level: "DEBUG", message: 'Comments data.', data: comments})
+    if(comments.length != 0){
       return (
         <ThemeProvider theme={theme}>
         <Box>

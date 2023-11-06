@@ -28,8 +28,9 @@ const SelectStars = ({ onRatingChange }) => {
       newRating = rating === newRating ? 0 : newRating;
       setRating(newRating);
       onRatingChange(newRating);
+      console.log({ level: "SUCCESS", message: 'A new rating has been setted.'});
     } catch (error) {
-      console.error('ERROR: ', error);
+      console.error({ level: "ERROR", message: 'An error occurred while setting a new rating.', error});
     }
   };
 

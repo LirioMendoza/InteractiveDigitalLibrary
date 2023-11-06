@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import CommentForm from './commentForm';
 import CommentList from './commentsList';
-import { Typography   } from '@mui/material';
+import { Typography, Box  } from '@mui/material';
 
 export default function Comments() {
   console.log({ level: "INFO", message: 'Trying to show Comments module.' });
@@ -25,9 +25,9 @@ export default function Comments() {
             <CommentForm addComment={addComment} />
             <submitButton/>
             <CommentList comments={comments} />
-          </Box>
+        </Box>
     )
-  }catch{
+  }catch(error){
     console.error({ level: "ERROR", message: 'An error occurred with Comments module.', error })
   }
 }
