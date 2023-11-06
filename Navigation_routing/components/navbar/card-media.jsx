@@ -8,7 +8,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DownloadIcon from '@mui/icons-material/Download';
 import Download from './downloads';
-import Page from './read';
+//import Page from './reading/page';
+import Page from '@/components/reading/page';
 
 export default function ImgMediaCard({ title, imageSrc, description }) {
   return (
@@ -25,7 +26,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
       <Grid item>
         <CardActions>
           <Button size="small" variant="contained">Comment</Button>
-          <Button  size="small" variant="contained"><Page key={title}></Page></Button>
+          <Page key={title}></Page>
 
         </CardActions>
       </Grid>

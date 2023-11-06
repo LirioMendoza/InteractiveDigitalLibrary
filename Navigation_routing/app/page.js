@@ -7,8 +7,9 @@ import Navbar from '@/components/navbar/Navbar';
 import Carousel from "../components/navbar/Carousel";
 
 import Login from "./login/page";
-import Catalog from "./catalog/page";
 import Home from "./home/page";
+import Comments from '@/components/navbar/comments/comments';
+import BasicAppGrid from '@/components/navbar/basic-app-bar';
 
 
 const navArrayLinks = [
