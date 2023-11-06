@@ -14,13 +14,11 @@ export default function Comments() {
   };
 
   return (
-    
       <div>
       <Typography variant="h6"  sx={{ fontWeight: 'bold' ,m: '1rem', }} >Leave your opinion about this reading material... </Typography>  
           <CommentForm addComment={addComment} />
           <submitButton/>
           <CommentList comments={comments} />
         </div>
-    
   )
 }

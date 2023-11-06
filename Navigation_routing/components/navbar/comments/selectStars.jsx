@@ -24,9 +24,13 @@ const SelectStars = ({ onRatingChange }) => {
   const [rating, setRating] = useState(0);
 
   const handleClick = (newRating) => {
-    newRating = rating === newRating ? 0 : newRating;
-    setRating(newRating);
-    onRatingChange(newRating);
+    try {
+      newRating = rating === newRating ? 0 : newRating;
+      setRating(newRating);
+      onRatingChange(newRating);
+    } catch (error) {
+      console.error('ERROR: ', error);
+    }
   };
 
   return (
