@@ -1,13 +1,13 @@
-
 "use client";
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Container } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
 import Carousel from "../components/navbar/Carousel";
 
-const Home = lazy(() => import('./home/page'));
-const Login = lazy(() => import('./login/page'));
-const Catalog = lazy(() => import('./catalog/page'));
+import Login from "./login/page";
+import Catalog from "./catalog/page";
+import Home from "./home/page";
 
 const navArrayLinks = [
   {
@@ -29,19 +29,25 @@ export default function App() {
     <>
       <Router>
         <Navbar navArrayLinks={navArrayLinks} />
-        
-        <Suspense fallback={<div>Loading...</div>}>
+        <Container sx={{ mt: 5}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/catalog" element={<Catalog />} />
           </Routes>
-        </Suspense>
-        <Carousel/>
+          <RouteRenderer />
+        </Container>
       </Router>
-      
-      
     </>
-    
   );
+}
+
+function RouteRenderer() {
+  const location = useLocation();
+  //Verificamos si la ruta actual es la ruta de inicio
+  if (location.pathname === '/') {
+    return <Carousel />;
+  } else {
+    return null; 
+  }
 }

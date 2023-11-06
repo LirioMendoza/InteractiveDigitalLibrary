@@ -1,21 +1,48 @@
 [
     {
         "id":1,
-        "image": "https://m.media-amazon.com/images/I/7185CkaIBVL._AC_UF1000,1000_QL80_.jpg",
-        "title":"book 1"
+        "image": " https://www.lexuseditores.com.mx/wp-content/uploads/2022/04/MNJMU1.jpg",
+        "title":" "
     },
      
     {
         "id":2,
-        "image": "https://www.planetadelibros.com.mx/usuaris/libros/fotos/314/m_libros/portada_sor-juana-en-la-cocina_monica-lavin_202105212241.jpg",
-        "title":"book 2"
+        "image": "https://i0.wp.com/sucedeleyendo.com/wp-content/uploads/2021/12/Portada-Sor-Juana-en-la-cocina.jpg?resize=400%2C400&ssl=1",
+        "title":""
 
     },
 
     {
         "id":3,
-        "image": "https://http2.mlstatic.com/D_NQ_NP_606457-MLM49297976616_032022-O.webp",
-        "title":"book 3"
+        "image": "https://m.media-amazon.com/images/I/7185CkaIBVL._AC_UF1000,1000_QL80_.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":4,
+        "image": "https://m.media-amazon.com/images/I/71hh0HTdZMS._AC_UF1000,1000_QL80_.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":5,
+        "image": "https://images.cdn2.buscalibre.com/fit-in/360x360/3d/d3/3dd3bc64abf0b389ae00fbdada920f84.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":5,
+        "image": "https://www.penguinlibros.com/mx/2663355/harry-potter-y-la-piedra-filosofal-edicion-especial-limitada-por-el-25-aniversario-harry-potter-1.jpg",
+        "title":" " 
+    },
+
+    {
+        "id":6,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZa3uQsw0UD3OBrcLsdzPsY91amvOI0zSGVw&usqp=CAU",
+        "title":" " 
 
     }
 
