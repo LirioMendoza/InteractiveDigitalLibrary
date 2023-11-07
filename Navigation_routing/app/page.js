@@ -1,14 +1,16 @@
-
 "use client";
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Container } from "@mui/material";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
-import BasicAppGrid from '@/components/navbar/basic-app-grid';
-import Comments from '@/components/navbar/comments/comments';
-const Home = lazy(() => import('./home/page'));
-const Login = lazy(() => import('./login/page'));
-const Catalog = lazy(() => import('./catalog/page'));
-const Comment =lazy(() => import('./comments/page'));
+import Carousel from "../components/navbar/Carousel";
+import Login from "./login/page";
+import Home from "./home/page";
+import Comments from '@/components/comments/comments';
+import BasicAppGrid from '@/components/navbar/basic-app-bar';
+
+import PdfRead from '../app/reading/pdf-viewer';
+
 
 const navArrayLinks = [
   {
@@ -32,16 +34,25 @@ export default function App() {
       <Router>
         <Navbar navArrayLinks={navArrayLinks} />
 
-        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/comments" element={<Comments />} />
             <Route path="/catalog" element={<BasicAppGrid />} />
-            
+            <Route path={'/pdf-viewer/:param1/:param2'} element={<PdfRead />} />
           </Routes>
-        </Suspense>
+          <RouteRenderer />
+        </Container>
       </Router>
-      
     </>
   );
+}
+
+function RouteRenderer() {
+  const location = useLocation();
+  //Verificamos si la ruta actual es la ruta de inicio
+  if (location.pathname === '/') {
+    return <Carousel />;
+  } else {
+    return null; 
+  }
 }

@@ -42,5 +42,4 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
   } catch(error){
     <Alert severity="error">Error: No se  pudo cargar el Libro.</Alert>
   }
-  
 }

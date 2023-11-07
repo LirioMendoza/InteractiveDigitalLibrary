@@ -1,0 +1,35 @@
+{
+  "name": "online_reading",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --watch"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.16",
+    "@react-pdf/renderer": "^3.1.14",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "next": "^14.0.1",
+    "next-images": "^1.8.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-pdf": "^7.5.1",
+    "react-router-dom": "^6.18.0",
+    "url-loader": "^4.1.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.1",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.0.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1"
+  }
+}
