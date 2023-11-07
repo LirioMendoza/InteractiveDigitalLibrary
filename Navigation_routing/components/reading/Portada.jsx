@@ -1,6 +1,5 @@
-import { Diversity1TwoTone } from '@mui/icons-material';
-import Button from '@mui/material/Button';
-import Link from 'next/link';
+
+
 export default function Portada() {
     return(
         <div style={{ width: '100%', height: '100px', 

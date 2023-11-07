@@ -7,9 +7,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DownloadIcon from '@mui/icons-material/Download';
+
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Download from './downloads';
 //import Page from './reading/page';
-import Page from '@/components/reading/page';
+import ButtonPDf from '@/components/reading/buttonPdf';
 
 export default function ImgMediaCard({ title, imageSrc, description }) {
   return (
@@ -26,7 +28,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
       <Grid item>
         <CardActions>
           <Button size="small" variant="contained">Comment</Button>
-          <Page key={title}></Page>
+          <ButtonPDf code={title}></ButtonPDf>
 
         </CardActions>
       </Grid>
