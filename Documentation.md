@@ -174,7 +174,21 @@ The structure that follows is a general visual description that we used within e
 
 #### 3. For online reading module:
 
+* Books: 
+    * Description: File that contains all the information for reading module
+    * Functionality: Allows to extract book URL that will show the book for reading.
+ 
+* PDFViewer
+    * Description: Allows to do various actions for reading
+    * Functionality: Creates all the buttons that allows the user to be able to navigate between pages and zooming. 
 
+* pdf-viewer 
+    * Description: Interface for reading books
+    * Functionality: Allows users to see the interface where they will be reading the book selected.
+
+* buttonPDF 
+    * Description: Button applied to catalog
+    * Functionality: Depending the book title the button will compare and get book URL to access to reading interface
 
 
 
