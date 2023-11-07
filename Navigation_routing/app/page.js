@@ -3,13 +3,14 @@ import React from 'react';
 import { Container } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
-
 import Carousel from "../components/navbar/Carousel";
 import Login from "./login/page";
 import Home from "./home/page";
-import Comments from '@/components/navbar/comments/comments';
+import Comments from '@/components/comments/comments';
 import BasicAppGrid from '@/components/navbar/basic-app-bar';
+
 import PdfRead from '@/components/reading/pdf-viewer';
+
 const navArrayLinks = [
   {
     title: 'Home',
