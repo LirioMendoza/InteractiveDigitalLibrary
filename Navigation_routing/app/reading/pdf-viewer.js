@@ -3,7 +3,7 @@ import React, { lazy, Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
 const PDFViewer = lazy(() => import('./PDFViewer'));
-const Portada = lazy(() => import('./Portada'));
+const Portada = lazy(() => import('../../components/navbar/Portada'));
 
 
 const PdfRead = () => {

@@ -1,14 +1,39 @@
 'use client';
 
-import { Box,Button, Typography, ThemeProvider} from '@mui/material';
+import { Box,Button, Typography, createTheme, ThemeProvider } from '@mui/material';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
-// import { theme } from '../../../styles/theme'
+
+const theme = createTheme({
+        palette: {
+             mode: 'light',
+                primary: {
+                        main: '#29a493',
+                        light: '#53B6A8',
+                        dark: '#1C7266',
+                        contrastText: '#fff',
+                },
+                secondary: {
+                        main: '#7c2ec1',
+                        light:'#9657CD',
+                        dark: '#562087',
+                        contrastText: '#fff',
+                },
+                discord: {
+                        main: '#5865F2',
+                        main2: '#EB459E',
+                        contrastText: '#fff',
+                } ,
+                action: {
+                        active: '#C5AFFF',
+                        hover: '#57BFB4',
+                }      },
+        });
           
 export default function Signin() {
 
     return (
-//     <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
 
         <Box sx={{  display: 'flex',
                     flexDirection:'column',
@@ -50,12 +75,6 @@ export default function Signin() {
 
                         <Box  sx={{ fontSize: 30, mr: '0.8rem'}} />
                                         
-                        {/* <Image  variant='contained' 
-                        alt="logo_Discord"  
-                        width= '60' height='60'
-                        src={"/login_app/images/clyde.png"} 
-                        
-                        /> */}
                 
                         <Typography variant="button" sx={{  m:1, }}>
                                 Inicia sesión con Discord
