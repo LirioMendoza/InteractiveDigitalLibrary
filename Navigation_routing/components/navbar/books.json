@@ -1,0 +1,187 @@
+[
+    {
+      "title":"Alicia en el país de las maravillas",
+      "imageSrc":"https://m.media-amazon.com/images/I/7185CkaIBVL._AC_UF1000,1000_QL80_.jpg",
+      "description":"Lewis Carroll",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652412"
+  
+    },
+    {
+      "title":"Aura",
+      "imageSrc":"https://m.media-amazon.com/images/I/71hh0HTdZMS._AC_UF1000,1000_QL80_.jpg",
+      "description":"Carlos Fuentes",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279072/652441"
+  
+    },
+    {
+      "title":"Sor Juana en la cocina",
+      "imageSrc":"https://www.planetadelibros.com.mx/usuaris/libros/fotos/314/m_libros/portada_sor-juana-en-la-cocina_monica-lavin_202105212241.jpg",
+      "description":"Mónica Laven, Ana Benítez",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652307"
+  
+    },
+    {
+      "title":"El pueblo del Sol",
+      "imageSrc":"https://m.media-amazon.com/images/I/719HB8XD1eL._AC_UF1000,1000_QL80_.jpg",
+      "description":"Alfonso Caso",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652315"
+  
+    },
+    {
+      "title":"Erase una vez en México",
+      "imageSrc":"https://www.planetadelibros.com.mx/usuaris/libros/fotos/265/m_libros/portada_erase-una-vez-mexico-1_alejandro-rosas_201803222027.jpg",
+      "description":"Sandra Molina, Alejandro Rosas",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652417"
+  
+    },
+    {
+      "title":"Descubre la extinción",
+      "imageSrc":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStfq3VR_IyYPjyPH8N3GzOQs8G4sznoLkDg-g8XNgm1uu9jaXfcG8z1nRsJkHbbSeSQlw&usqp=CAU",
+      "description":"Jeff Bloom",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652315"
+  
+    },
+    {
+      "title":"Harry Potter y la piedra filosofal",
+      "imageSrc":"https://http2.mlstatic.com/D_NQ_NP_606457-MLM49297976616_032022-O.webp",
+      "description":"J. K. Rowling",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652315"
+  
+    },
+    {
+      "title":"La Ilíada y la Odisea",
+      "imageSrc":"https://cdn.kobo.com/book-images/ae818875-9a13-429d-b3ab-da32dc3bd90d/1200/1200/False/la-iliada-y-la-odisea-10.jpg",
+      "description":"Homero",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652277"
+  
+    },
+    {
+      "title":"Obras selectas de Julio Verne",
+      "imageSrc":"https://editoresmexicanosunidos.mx/wp-content/uploads/2022/02/fractales-julio-verne.png",
+      "description":"Julio Verne",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652320"
+  
+    },
+    {
+      "title":"Las batallas en el desierto",
+      "imageSrc":"https://elemblob.blob.core.windows.net/media/las-batallas57a23054e838a_300h.jpg",
+      "description":"José Emilio Pacheco",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652326"
+  
+    },
+    {
+      "title":"La Torre y el Jardín",
+      "imageSrc":"https://www.lashistorias.com.mx/wp-content/uploads/2012/11/La-torre-y-el-jard%C3%ADn-Alberto-Chimal-e1357519253590.jpg",
+      "description":"Alberto Chimal",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652428"
+    },
+    {
+      "title":"Moby-Dick",
+      "imageSrc":"https://www.udllibros.com/imagenes/9788415/978841560143.JPG",
+      "description":"Herman Melville",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652399"
+  
+    },
+    {
+      "title":"Mujercitas",
+      "imageSrc":"https://m.media-amazon.com/images/I/91Op0BdHd0L._AC_UF1000,1000_QL80_.jpg",
+      "description":"Louisa May Alcott",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652377"
+    },
+    {
+      "title":"La naranja mecánica",
+      "imageSrc":"https://images.cdn1.buscalibre.com/fit-in/360x360/81/22/812252fdfa443853ac4f0c38d89a9690.jpg",
+      "description":"Anthony Burgess",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652417"
+  
+    },
+    {
+      "title":"Orgullo y Prejuicio",
+      "imageSrc":"https://assets-global.website-files.com/6034d7d1f3e0f52c50b2adee/625452ebb0e15e764981b44c_6034d7d1f3e0f55fcab2b2de_Orgullo-y-prejuicio-jane-austen-editorial-alma.jpeg",
+      "description":"Jane Austen",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652392"
+  
+    },
+    {
+      "title":"La teoría del todo",
+      "imageSrc":"https://m.media-amazon.com/images/I/916d6cobjqL._AC_UF1000,1000_QL80_.jpg",
+      "description":"Stephen W. Hakwing",
+      "type": "book",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652375"
+  
+    },
+    {
+      "title":"Harper's Bazaar",
+      "imageSrc":"https://m.media-amazon.com/images/I/61rXKOohh3L._AC_UF700,800_QL80_.jpg",
+      "description":"The Arrival of Taylor Russell",
+      "type": "magazine",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279042/652362"
+    },
+    {
+      "title":"Elle",
+      "imageSrc":"https://i.pinimg.com/1200x/b9/b5/68/b9b56851eef156cb9835078edebcd2c6.jpg",
+      "description":"Camila Cabello",
+      "type": "magazine",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652334"
+  
+    },
+    {
+      "title":"Forbes",
+      "imageSrc":"https://www.bellanaija.com/wp-content/uploads/2022/06/285503423_540278294473287_7485071409679203557_n.jpg",
+      "description":"June | July 2022",
+      "type": "magazine",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652337"
+  
+    },
+    {
+      "title":"Glamour",
+      "imageSrc":"https://upload.wikimedia.org/wikipedia/en/7/7d/Glamour_cover_January_2019.jpeg",
+      "description":"January 2019",
+      "type": "magazine",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652345"
+  
+    },
+    {
+      "title":"Maire Claire",
+      "imageSrc":"https://blackpinkupdate.com/wp-content/uploads/2022/08/1-BLACKPINK-Jisoo-Dior-Beauty-Marie-Claire-Korea-Magazine.jpeg",
+      "description":"Emma Chamberlain",
+      "type": "magazine",
+      "download": "https://drive.google.com/uc?id=1ezbfcYcVFiXMzRpJG5-tlDl6Y9pkjRk1&export=download",
+      "read":"https://publuu.com/flip-book/279008/652341"
+  
+    }
+  ]
