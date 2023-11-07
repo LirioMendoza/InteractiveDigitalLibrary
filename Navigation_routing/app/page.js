@@ -9,7 +9,7 @@ import Home from "./home/page";
 import Comments from '@/components/comments/comments';
 import BasicAppGrid from '@/components/navbar/basic-app-bar';
 
-import PdfRead from '@/components/reading/pdf-viewer';
+import PdfRead from '../app/reading/pdf-viewer';
 
 const navArrayLinks = [
   {

@@ -11,7 +11,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Download from './downloads';
 //import Page from './reading/page';
-import ButtonPDf from '@/components/reading/buttonPdf';
+import ButtonPDf from '../../app/reading/buttonPdf';
 
 export default function ImgMediaCard({ title, imageSrc, description }) {
   return (
