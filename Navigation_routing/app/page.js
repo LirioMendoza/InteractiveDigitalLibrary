@@ -11,6 +11,7 @@ import BasicAppGrid from '@/components/navbar/basic-app-bar';
 
 import PdfRead from '../app/reading/pdf-viewer';
 
+
 const navArrayLinks = [
   {
     title: 'Home',
@@ -26,12 +27,13 @@ const navArrayLinks = [
   }
   
 ];
+
 export default function App() {
   return (
     <>
       <Router>
         <Navbar navArrayLinks={navArrayLinks} />
-        <Container sx={{ mt: 5}}>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/comments" element={<Comments />} />
