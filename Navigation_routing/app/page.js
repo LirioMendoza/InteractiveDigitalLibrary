@@ -8,7 +8,7 @@ import BasicAppGrid from '@/components/navbar/basic-app-grid';
 import Home from "./home/page";
 import PdfRead from './reading/pdf-viewer';
 
-
+import HomeLogin from './login/page';
 
 const LOG_LEVELS = {
   INFO: 'INFO',
@@ -29,9 +29,13 @@ const navArrayLinks = [
     title: 'Home',
     path: '/'
   },
+  // {
+  //   title: 'Catalog',
+  //   path: '/catalog'
+  // }, 
   {
-    title: 'Catalog',
-    path: '/catalog'
+    title: 'Login',
+    path: '/login'
   }
   
 ];
@@ -47,9 +51,9 @@ export default function App() {
         <Container sx={{ mt: 5}}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<BasicAppGrid />} />
+            {/* <Route path="/catalog" element={<BasicAppGrid />} /> */}
             <Route path={'/pdf-viewer/:param1/:param2'} element={<PdfRead />} />
-            
+            <Route path="/login" element={<HomeLogin />} />
           </Routes>
           <RouteRenderer />
         </Container>
