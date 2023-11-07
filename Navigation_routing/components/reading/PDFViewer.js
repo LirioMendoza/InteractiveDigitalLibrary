@@ -9,14 +9,28 @@ import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import jsonData from './Books.json'
 
+const LOG_LEVELS = {
+  INFO: 'INFO',
+  SUCCESS: 'SUCCESS',
+  ERROR: 'ERROR',
+  WARNING: 'WARNING',
+  DEBUG: 'DEBUG',
+};
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function PDFViewer({KEY, INDEX}) {
   const rutes = jsonData.map((books) => {
-    return books.value;
+      return books.value;
   });
+  try {
+    const ruteExists = Boolean(rutes[INDEX]);
+    console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${KEY}" is located at the index ${INDEX} in the Map.`});
+  } catch (error) {
+    console.error({ level: LOG_LEVELS.ERROR, message: 'An Error has occurred: Book path not found.', error });
+  }
+  
   const ruta = rutes[INDEX];
-
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1);

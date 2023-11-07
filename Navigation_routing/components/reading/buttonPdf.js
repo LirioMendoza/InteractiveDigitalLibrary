@@ -1,51 +1,54 @@
 'use client';
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import Link from 'next/link';
-import { Button, Grid, Typography, Color, ThemeProvider } from '@mui/material';
-import theme from '@/styles/theme';
-import {NavLink} from 'react-router-dom'
+import { Button, Typography} from '@mui/material';
+import {NavLink} from 'react-router-dom';
+import jsonData from './Books.json';
 //import PdfRead from './pdf-viewer';
 
 
-const openPDFViewer = (url, title, width, height) => {
-  const left = (window.screen.width - width) / 2;
-  const top = (window.screen.height - height) / 2;
-  window.open(
-    url,
-    title,
-    `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
-  );
+const searchKeyIndex = (searchkey) => {
+  
+// Find the index of the key in the array
+  const keys = jsonData.map((books) => {
+    return books.key;
+  });
+  const inde = keys.indexOf(searchkey);
+  //console.log(`La clave "${searchkey}" se encuentra en el índice ${inde} en el Map.`);
+  return inde;
 };
-//
-const containerPdf = (key, ind) => {
-  const jsFileUrl = '/pdf-viewer'+"/"+ind;
+
+
+//<Link href='/pdf-viewer' content={<PdfRead code={key} inde={ind}/>}>
+const containerPdf = (title, ind) => {
+  const jsFileUrl = '/pdf-viewer'+'/'+title+'/'+ind;
   return(
     <>
-      <NavLink hrefLang='./pdf-viewer.js'  to={jsFileUrl}>
+      <NavLink to={jsFileUrl} >
         <Button
           variant="contained"
-          color='secondary'
+          size="small"
           startIcon={<PictureAsPdfIcon />}
+
           data-testid = 'pdf-icon'
         >
-          <Typography variant="h9" gutterBottom >
-            {key}
+          <Typography style={{color: 'white'}} >
+            READ
           </Typography>
         </Button> 
       </NavLink>
     </>
   );
 }
-const ButtonPDf = ({code, index}) => {
+const ButtonPDf = ({code}) => {
   //console.log(`Al boton le pasaste La clave "${code}" se encuentra en el índice ${index} en el Map.`);
+  //console.log(`La clave "${dataBook.TITLE}" se encuentra en el índice ${dataBook.IND} en el Map.`);
+  const inde = searchKeyIndex(code);
   return(
     <>
-      <ThemeProvider theme={theme}>
-          <div>
-            {containerPdf(code, index)}
-          </div>
-      </ThemeProvider>
+      <div>
+        {containerPdf(code, inde)}
+      </div>
     </>
   );
 };
