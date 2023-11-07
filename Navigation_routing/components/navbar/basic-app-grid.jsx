@@ -1,12 +1,14 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
+import { Alert } from '@mui/material';
 import Portada from './Portada';
 import ImgMediaCard from './card-media';
 import jsonData from './books.json'; // Importa el JSON
 
 export default function BasicAppGrid() {
   const { title, imageSrc, description } = jsonData;
-
+  try{
+    
   return (
     <Grid container spacing={0.5}>
        <Grid item xs={12}>
@@ -22,4 +24,9 @@ export default function BasicAppGrid() {
       ))}
     </Grid>
   );
+  }catch(error){
+    return (
+      <Alert severity="error">Error: No se pudo caragr el catálogo.</Alert>
+    );
+  }
 }
