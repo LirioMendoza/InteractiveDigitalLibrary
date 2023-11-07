@@ -13,6 +13,7 @@ const LOG_LEVELS = {
 const DownloadButton = ({ fileURL }) => {
   const handleDownload = (url, filename) => {
     console.log({ level: LOG_LEVELS.INFO, message: 'Se ha iniciado la descarga.' });
+    console.debug({ level: LOG_LEVELS.DEBUG, message: 'Intentando crear el enlace de descarga.' });
     console.debug({ level: LOG_LEVELS.DEBUG, message: 'URL:', url });
 
     try {
@@ -58,4 +59,3 @@ const Page = () => {
 };
 
 export default Page;
-
