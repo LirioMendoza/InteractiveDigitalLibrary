@@ -10,9 +10,13 @@ import DownloadIcon from '@mui/icons-material/Download';
 import { Alert } from '@mui/material';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Download from './downloads';
+import Fade from '@mui/material/Fade';
+import Paper from '@mui/material/Paper';
 //import Page from './reading/page';
 import ButtonPDf from '../../app/reading/buttonPdf';
-
+import Comments from '../comments/comments';
+import Popper from '@mui/material/Popper';
+import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 export default function ImgMediaCard({ title, imageSrc, description }) {
   try{
     return (
@@ -28,7 +32,24 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
         </CardContent>
         <Grid item>
           <CardActions>
-            <Button size="small" variant="contained">Comment</Button>
+          <PopupState variant="popper" popupId="demo-popup-popper">
+      {(popupState) => (
+        <div>
+          <Button variant="contained" {...bindToggle(popupState)}>
+            Comment
+          </Button>
+          <Popper {...bindPopper(popupState)} transition>
+            {({ TransitionProps }) => (
+              <Fade {...TransitionProps} timeout={350}>
+                <Paper>
+                  <Typography sx={{ p: 2 }}><Comments/></Typography>
+                </Paper>
+              </Fade>
+            )}
+          </Popper>
+        </div>
+      )}
+    </PopupState>
             <ButtonPDf code={title}></ButtonPDf>
   
           </CardActions>
