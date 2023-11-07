@@ -3,12 +3,10 @@ import React from 'react';
 import { Container } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from '@/components/navbar/Navbar';
-
 import Carousel from "../components/navbar/Carousel";
-
-import Login from "./login/page";
-import Catalog from "./catalog/page";
+import BasicAppGrid from '@/components/navbar/basic-app-grid';
 import Home from "./home/page";
+import PdfRead from './reading/pdf-viewer';
 
 
 
@@ -32,10 +30,6 @@ const navArrayLinks = [
     path: '/'
   },
   {
-    title: 'Comment',
-    path: '/comments'
-  },
-  {
     title: 'Catalog',
     path: '/catalog'
   }
@@ -53,8 +47,8 @@ export default function App() {
         <Container sx={{ mt: 5}}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/comments" element={<Comments />} />
             <Route path="/catalog" element={<BasicAppGrid />} />
+            <Route path={'/pdf-viewer/:param1/:param2'} element={<PdfRead />} />
             
           </Routes>
           <RouteRenderer />
