@@ -57,11 +57,6 @@ Create an intuitive and user-friendly application, so the navigation between the
 
 You should ensure that you have installed npm (Node Package Manager), to checked this you can use the command: npm -v 
 
-### Installation Steps.
-
-On the terminal, you navigate to the directory where you want to store the project, there you will clone it from the repository from GitHub: https://github.com/LirioMendoza/InteractiveDigitalLibrary
-Once you have done that, Navigate to the Project Directory and install the dependencies.
-
 ### Configuration. 
 
 Since you will need to realize the authentication, you will need to configure environment variables so you need to create a .env file, in this you should put 4 variables:
@@ -69,6 +64,31 @@ NEXTAUTH_URL
 NEXTAUTH_SECRET
 DISCORD_CLIENT_ID
 DISCORD_CLIENT_SECRET
+
+### Installation Steps.
+
+On the terminal, you navigate to the directory where you want to store the project, there you will clone it from the repository from GitHub: https://github.com/LirioMendoza/InteractiveDigitalLibrary
+
+Once you have done that, Navigate to the Project Directory and inside the Navigation_routing folder install the dependencies using the following command:
+
+```
+npm install i
+```
+
+That should install all the dependencies necessaries for the project and u can now run with the next command:
+
+```
+npm run dev
+```
+
+
+### Testing 
+
+To be able to execute our tests, you need to be inside Navigation_routing folder and use the following command:
+
+```
+npm test
+```
 
 ---
 ---
@@ -247,87 +267,7 @@ The structure that follows is a general visual description that we used within e
     * Functionality: Allows to extract every book data that Will be showing on the slider.
 
 
----
----
 
-## Docker Containers
-
-We containerize to ensure consistency across various environments. Docker containers package the entire runtime environment, including the application code, dependencies, and system libraries. This isolation prevents conflicts and ensures a reliable execution environment.
-
-#### Configuration
-
-First we modified next.config.js with the next lines:
-
-```
-/** @type {import('next').NextConfig} */
-    const nextConfig = {
-        output: 'export',
-    }
-```
-   
-We also created a Docker file on the module's directory. This file defines the steps to build the Docker image.
-
-```Dockerfile
-FROM nginx:1.25.2-alpine3.18-slim
-
-WORKDIR /usr/share/nginx/html
-
-RUN rm /usr/share/nginx/html/*
-COPY ./out .
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
-
-```
-
-Then we run the following commands in every module's directory:
-
-```
-sudo systemctl start docker
-
-sudo npm install
-
-sudo npm i -g next
-
-sudo npm run build
-```
-
-For **building the container image** we used the command below, in which we used the module name as the image name, and for the tag v1.0
-
-```
-sudo docker build . -t imageName:tag
-```
-
-To run the container we used the next command:
-
-```
-docker run -p 80:80 -d imageName:tag
-```
-
-To verify the image container was correctly we enter to the url: 
-
-```
-http://localhost:80
-```
-
-We also decide to use Docker Hub for uploading our images, for that 
-
-```
-docker tag imageName:tag liriomendoza/imageName:tag 
-```
-
-Then we login to an account that we created to load every container image, with the next command. That after than it will request the username and password to log in. 
-
-```
-docker login
-```
-
-Then we did the following command for the container images created.
-
-```
-docker push liriomendoza/imageName:tag
-```
 
 ---
 ---
