@@ -37,7 +37,7 @@ const CommentList = ({ comments }) => {
       );
     }else{
       return(
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={Theme}>
         <Box>
           <Typography variant="h6"  sx={{ fontWeight: 'bold' ,m: '1rem', }} >No comments yet. </Typography>  
         </Box>

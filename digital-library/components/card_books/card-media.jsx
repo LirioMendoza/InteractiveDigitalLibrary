@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {Card, Grid, CardActions, CardContent, CardMedia, Button, Typography, Fade, Paper, Popper} from '@mui/material';
+import {Card, Grid, CardActions, Container, CardContent, CardMedia, Button, Typography, Fade, Paper, Popper} from '@mui/material';
 import { Alert } from '@mui/material';
 import Download from '../download/downloads';
 import ButtonPDf from '@/components/read/button-Pdf';
@@ -26,7 +26,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
     }
   }, [status, session, router]);
 
-  if (status === 'authenticated' && session) {
+  
     try{
       console.debug({ level: LOG_LEVELS.DEBUG, message: 'Trying to show the Cards Media of the books' });
       return (
@@ -47,7 +47,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
             <CardActions>
               <PopupState variant="popper" popupId="demo-popup-popper">
                 {(popupState) => (
-                  <div>
+                  <Container>
                     <Button variant="contained" {...bindToggle(popupState)}>
                       Comment
                     </Button>
@@ -60,7 +60,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
                         </Fade>
                       )}
                     </Popper>
-                  </div>
+                  </Container>
                 )}
               </PopupState>
             </CardActions>
@@ -87,10 +87,5 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
       console.error({ level: LOG_LEVELS.ERROR, message: 'Book could not be loaded.', error });
       <Alert severity="error">Error: Book could not be loaded</Alert>
     }
-  }
-
-  return (
-    <div> Loading... </div> // Puedes mostrar un mensaje de carga mientras se verifica la sesión
-  );
 }
 
