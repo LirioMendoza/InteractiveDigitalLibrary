@@ -1,6 +1,10 @@
 import * as React from 'react';
-import { Button, Stack, createTheme, ThemeProvider } from '@mui/material/';
+import { Button, Stack, ThemeProvider } from '@mui/material/';
 import Theme from '@/styles/theme';
+
+/* 
+Description: Button for submiting a new comment
+*/
 
 const SubmitButton = ({ label }) => {
   return (

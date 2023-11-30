@@ -5,6 +5,10 @@ import CommentForm from './Comment-Form';
 import CommentList from './Comments-List';
 import { Typography, Box  } from '@mui/material';
 
+/* 
+Description: Encapsulates the main section for comments section.
+*/ 
+
 export default function Comments() {
   console.log({ level: "INFO", message: 'Trying to show Comments module.' });
   try{
@@ -19,12 +23,17 @@ export default function Comments() {
       }
     };
 
-    return (
+    return ( //shows the comment section
         <Box>
-        <Typography variant="h6"  sx={{ fontWeight: 'bold' ,m: '1rem', }} >Leave your opinion about this reading material... </Typography>  
-            <CommentForm addComment={addComment} />
-            <submitButton/>
-            <CommentList comments={comments} />
+          <Typography variant="h6"  
+            sx={{ maxWidth: '400px', 
+                  fontWeight: 'bold' ,
+                  m: '1rem', }} >
+            Leave your opinion about this reading material... 
+          </Typography>  
+          <CommentForm addComment={addComment} />
+          <submitButton/> 
+          <CommentList comments={comments} />
         </Box>
     )
   }catch(error){

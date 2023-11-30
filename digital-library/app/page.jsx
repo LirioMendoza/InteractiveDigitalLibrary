@@ -1,6 +1,5 @@
-
 import React from 'react';
-import Home from '../pages/home';
+import Home from '@/pages/home';
 const LOG_LEVELS = {
   INFO: 'INFO',
   SUCCESS: 'SUCCESS',
@@ -15,7 +14,7 @@ function log(level, message) {
 }
 
 export default function App() {
-  //Se observa el mensaje en consola
+  //Message on terminal
   log(LOG_LEVELS.INFO, 'Application started');
   return (
       <Home/>
