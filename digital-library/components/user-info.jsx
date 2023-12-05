@@ -5,6 +5,10 @@ import { Avatar, Grid, Card, CardContent, Typography, Button } from '@mui/materi
 import Link from 'next/link';
 
 
+/*
+Description: Encapsulates user info section
+*/
+
 export default function UserInfo() {
     const { status, data: session } = useSession();
 

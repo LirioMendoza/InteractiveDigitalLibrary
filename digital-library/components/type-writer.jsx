@@ -4,6 +4,10 @@ import Typography from '@mui/material/Typography';
 import { useSession } from 'next-auth/react';
 import {textHome, textHome1} from "@/constants/constants";
 
+/*
+Description: Handles text created by Javascript
+*/
+
 const TypeWriter = ({ text, speed = 100 }) => {
   
   const { status, data: session } = useSession();

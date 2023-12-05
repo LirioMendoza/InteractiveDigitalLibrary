@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import { Button, Typography} from '@mui/material';
+import { Box, Button, Typography} from '@mui/material';
 import jsonData from './Books.json';
 import Link from 'next/link';
 
@@ -24,7 +24,7 @@ const ContainerPdf = (title, ind) => {
   const encodedInd = encodeURIComponent(ind);
 
   const pdfUrl = `/pdf-viewer/${encodedInd}/${encodedTitle}`;
-  return(
+  return( //Button to access reading module
       <Typography variant='h6' color='inherit'  textDecoration='none'>
         <Link href="/pdf-viewer/[param1]/[param2]" as={pdfUrl} passHref>
           <Button

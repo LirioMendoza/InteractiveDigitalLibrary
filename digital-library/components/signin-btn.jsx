@@ -5,6 +5,9 @@ import theme from '@/styles/theme';
 import { Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, Link, TextField, Typography, Divider, ThemeProvider} from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
+/*
+Description: Encapsulates main login section 
+*/
 
 export default function SignInBtn() {
   return (
@@ -21,9 +24,12 @@ export default function SignInBtn() {
                 <Avatar sx={{ m: 1, bgcolor: 'primary.main' }}>
                     <LockOutlinedIcon />
                 </Avatar>
+
+                
                 <Typography component='h1' variant='h3'>
                     Sign in
                 </Typography>
+
                 <Box component='form' noValidate sx={{ mt: 1}}>
                     <TextField
                         margin='normal'
@@ -64,6 +70,7 @@ export default function SignInBtn() {
                     >
                         Sign In
                     </Button>
+
                     <Grid container>
                         <Grid item xs>
                             <Link href='#' variant='body2'>
@@ -76,6 +83,7 @@ export default function SignInBtn() {
                             </Link>
                         </Grid>
                     </Grid>
+
                     <Grid container>
                         <Grid item xs={12}>
                             <Box display="flex" alignItems="center" justifyContent="center">
@@ -85,6 +93,8 @@ export default function SignInBtn() {
                             </Box>
                         </Grid>
                         <Grid item xs>
+
+                            {/* Discord Button */}
                           <Button
                             onClick={() => signIn('discord')}
                             variant='contained'
@@ -105,7 +115,11 @@ export default function SignInBtn() {
                             </Typography>
                           </Button>
                         </Grid>
+
                     </Grid>
+
+
+
                 </Box>
 
             </Box>
