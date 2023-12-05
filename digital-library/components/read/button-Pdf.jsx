@@ -22,8 +22,9 @@ const searchKeyIndex = (searchkey) => {
 const ContainerPdf = (title, ind) => {
   const encodedTitle = encodeURIComponent(title);
   const encodedInd = encodeURIComponent(ind);
-  const pdfUrl = `/pdf-viewer/${encodedTitle}/${encodedInd}`;
-  return( // Button to read pdf file 
+
+  const pdfUrl = `/pdf-viewer/${encodedInd}/${encodedTitle}`;
+  return(
       <Typography variant='h6' color='inherit'  textDecoration='none'>
         <Link href="/pdf-viewer/[param1]/[param2]" as={pdfUrl} passHref>
           <Button

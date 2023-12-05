@@ -28,7 +28,7 @@ Description: Encapsulates main section to show the pdf file
 function PDFViewer({KEY, INDEX}) {
   const { status, data: session } = useSession();
   const router = useRouter();
-
+  let width, height;
   useEffect(() => {
     if (!(status === 'authenticated' && session)) {
       router.push('/login');
@@ -79,9 +79,16 @@ function PDFViewer({KEY, INDEX}) {
           };
         }
       }, []);
-
-      const width = ((typeof window !== 'undefined' ? window.innerWidth : 0) - 700)/2;
-      const height = ((typeof window !== 'undefined' ? window.innerHeight : 0) - 500)/2;
+      if (typeof window !== 'undefined') {
+        if(window.innerWidth >= 900 && window.innerHeight >= 500){
+          width = (window.innerWidth - 300)/2;
+          height = (window.innerHeight - 100)/2;
+        }else{
+          width = (window.innerWidth)/2;
+          height = (window.innerHeight)/2;
+        }
+        
+      }
       console.log({ level: LOG_LEVELS.INFO, message: `The width of the window is: "${windowSize.width}" and the height is: ${windowSize.height}`});
       /*The PDF viewer returns, with buttons to change the page and zoom into the document*/
       console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${KEY}" is located in the ${rutes[INDEX]} path of the Map.`});
@@ -119,7 +126,7 @@ function PDFViewer({KEY, INDEX}) {
               file={ruta}
               onLoadSuccess={onDocumentLoadSuccess} 
             >
-              {((pageNumber == 1)||(windowSize.width < (2*width)))? (
+              {((pageNumber == 1)||(window.innerWidth < 900 ))? (
                 <Grid container columnSpacing={{ xs: 0, sm: 0, md: 0 }} sx={{justifyContent:"center", alignItems:"center"}}>
                   <Grid item xs={0.3} sm={1.3} md={2.3}/>
                   <Grid item xs="auto">
@@ -143,7 +150,7 @@ function PDFViewer({KEY, INDEX}) {
           </Grid>
 
           <Grid item xs={12} sx={{alignContent:'center' }}>
-            {((pageNumber == 1)||(windowSize.width <= 2*width))? (
+            {((pageNumber == 1)||(window.innerWidth < 900 ))? (
               <Typography sx={{textAlign:'center'}}>
                 Page {pageNumber} of {numPages} 
               </Typography>
@@ -159,7 +166,7 @@ function PDFViewer({KEY, INDEX}) {
             {/* Button for the previous page */}
             <Button
               variant="contained"
-              onClick={((pageNumber == 2)||(windowSize.width <= 2*width))? (
+              onClick={((pageNumber == 2)||(window.innerWidth < 900 ))? (
                 () => setPageNumber(pageNumber - 1)
                 ) : (
                   () => setPageNumber(pageNumber - 2)
@@ -173,7 +180,7 @@ function PDFViewer({KEY, INDEX}) {
             {/* Button for the next page */}
             <Button
               variant="contained"
-              onClick={((pageNumber == 1)||(windowSize.width <= 2*width))? (
+              onClick={((pageNumber == 1)||(window.innerWidth < 900 ))? (
                 () => setPageNumber(pageNumber + 1)
                 ) : (
                   () => setPageNumber(pageNumber + 2)

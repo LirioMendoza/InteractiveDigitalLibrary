@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo  } from 'react';
 import Typography from '@mui/material/Typography';
 import { useSession } from 'next-auth/react';
-import {textHome, textHome1} from "@/constants/Constants";
+import {textHome, textHome1} from "@/constants/constants";
 
 const TypeWriter = ({ text, speed = 100 }) => {
   
