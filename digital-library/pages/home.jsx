@@ -1,6 +1,6 @@
 import Portada from "../components/portada";
 import TypeWriter from "../components/type-writer";
-import {textHome} from "../constants/Constants";
+import {textHome} from "../constants/constants";
 import Carousel from "../components/carousel/carousel";
 
 export default function Home(){

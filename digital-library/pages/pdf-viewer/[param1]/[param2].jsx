@@ -16,7 +16,7 @@ const PdfRead = () => {
   const router = useRouter();//returns the parameters passed through the route
   const { param1, param2 } = router.query || {};
   try {
-    console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${param1}" is located at the index ${param2} in the Map.`});
+    console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${param2}" is located at the index ${param1} in the Map.`});
   } catch (error) {
     console.error({ level: LOG_LEVELS.ERROR, message: 'An Error has occurred: Parameters not found', error });
   }
@@ -29,7 +29,7 @@ const PdfRead = () => {
       flexDirection: 'column', color: 'white' }}>
         
         <Portada />
-        <PDFViewer KEY={param1} INDEX={param2} /> 
+        <PDFViewer KEY={param2} INDEX={param1} /> 
       </div>
   );
 };
