@@ -2,10 +2,12 @@
 import React from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { Button, Typography} from '@mui/material';
-import {NavLink} from 'react-router-dom';
 import jsonData from './Books.json';
 import Link from 'next/link';
 
+/* 
+Description: Handles pdf button to access and read the file
+*/ 
 
 const searchKeyIndex = (searchkey) => {
   
@@ -20,9 +22,9 @@ const searchKeyIndex = (searchkey) => {
 const ContainerPdf = (title, ind) => {
   const encodedTitle = encodeURIComponent(title);
   const encodedInd = encodeURIComponent(ind);
+
   const pdfUrl = `/pdf-viewer/${encodedInd}/${encodedTitle}`;
   return(
-    <>
       <Typography variant='h6' color='inherit'  textDecoration='none'>
         <Link href="/pdf-viewer/[param1]/[param2]" as={pdfUrl} passHref>
           <Button
@@ -34,18 +36,15 @@ const ContainerPdf = (title, ind) => {
           </Button>
         </Link>
       </Typography>
-    </>
   );
 }
 const ButtonPDf = ({code}) => {
 
   const inde = searchKeyIndex(code);
   return(
-    <>
-      <div>
+      <Box type='div'>
         {ContainerPdf(code, inde)}
-      </div>
-    </>
+      </Box >
   );
 };
 

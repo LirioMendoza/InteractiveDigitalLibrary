@@ -21,6 +21,10 @@ const LOG_LEVELS = {
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
+/* 
+Description: Encapsulates main section to show the pdf file 
+*/ 
+
 function PDFViewer({KEY, INDEX}) {
   const { status, data: session } = useSession();
   const router = useRouter();
@@ -66,10 +70,10 @@ function PDFViewer({KEY, INDEX}) {
             });
           };
 
-          // Agregar un evento de cambio de tamaño al montar el componente
+          // Add an event to change size for component. 
           window.addEventListener('resize', handleResize);
 
-          // Eliminar el evento de cambio de tamaño al desmontar el componente
+          // Deletes evento for size change  
           return () => {
             window.removeEventListener('resize', handleResize);
           };
@@ -90,13 +94,15 @@ function PDFViewer({KEY, INDEX}) {
       console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${KEY}" is located in the ${rutes[INDEX]} path of the Map.`});
       return (
         <ThemeProvider theme={Theme}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 0 }} >
+          <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 0 }} >
           <Grid item xs={12} alignContent='center' >
             <Typography gutterBottom variant="h4" component="div">
               {KEY}
             </Typography>
           </Grid>
           <Grid item xs={12} md={12} sx={{justifyContent:"center",  alignItems:"center", textAlign:'center'}} >
+            
+            {/* Button to zoom out */}
             <Button
               variant="contained"
               onClick={handleZoomOut}
@@ -104,6 +110,8 @@ function PDFViewer({KEY, INDEX}) {
             >
               <ZoomOutIcon />
             </Button>
+
+            {/* Button to zoom in */}
             <Button
               variant="contained"
               onClick={handleZoomIn}
@@ -154,6 +162,8 @@ function PDFViewer({KEY, INDEX}) {
           </Grid>
 
           <Grid item xs={12} md={12} sx={{justifyContent:"center",  alignItems:"center", textAlign:'center'}}>
+            
+            {/* Button for the previous page */}
             <Button
               variant="contained"
               onClick={((pageNumber == 2)||(window.innerWidth < 900 ))? (
@@ -166,6 +176,8 @@ function PDFViewer({KEY, INDEX}) {
             >
               <KeyboardArrowLeftIcon />Previous Page
             </Button>
+
+            {/* Button for the next page */}
             <Button
               variant="contained"
               onClick={((pageNumber == 1)||(window.innerWidth < 900 ))? (
@@ -191,7 +203,7 @@ function PDFViewer({KEY, INDEX}) {
   }
 
   return (
-    <div> Loading... </div> // Puedes mostrar un mensaje de carga mientras se verifica la sesión
+    <Box type='div'> Loading... </Box> // Puedes mostrar un mensaje de carga mientras se verifica la sesión
   );
 }
 
