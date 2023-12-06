@@ -20,18 +20,19 @@ export default function Navbar({ navArrayLinks }) {
     const { status, data: session } = useSession();
     const [open, setOpen] = useState(false);
   
-    if (status === 'authenticated') {
-      navArrayLinks = NavBar2;
+    if (status === 'authenticated') { //when authenticated
+      navArrayLinks = NavBar2; //HOME and LOGIN
     } else {
-      navArrayLinks = NavBar1;
+      navArrayLinks = NavBar1; //HOME CATALOG and PROFILE
     }
   
     return (
       <ThemeProvider theme={Theme}>
+        {/* Navbar for the application    */}
         <AppBar position='static' sx={{ boxShadow: 'md' }}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
   
-            {/* Contenido izquierdo para dispositivos más grandes */}
+            {/* Left content for larger devices */}
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center', gap: '10px' }}>
               {navArrayLinks.map(item => (
                 <Typography key={item.title} variant='h6' color='inherit' textDecoration='none'>
@@ -62,7 +63,7 @@ export default function Navbar({ navArrayLinks }) {
               ))}
             </Box>
   
-            {/* Botón del menú para dispositivos más pequeños */}
+            {/* Menu button for smaller devices */}
             <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
               <IconButton
                 color="inherit"
@@ -74,7 +75,7 @@ export default function Navbar({ navArrayLinks }) {
               </IconButton>
             </Box>
   
-            {/* Drawer para dispositivos más pequeños */}
+            {/* Drawer for smaller devices */}
             <Drawer
               open={open}
               anchor="left"
