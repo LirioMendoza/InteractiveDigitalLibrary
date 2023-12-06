@@ -7,7 +7,7 @@ import Comments from '../comments/Comments';
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-
+import { useState } from 'react';
 const LOG_LEVELS = {
   INFO: 'INFO',
   SUCCESS: 'SUCCESS',
@@ -24,6 +24,11 @@ Data for the books will be taken from books.json
 export default function ImgMediaCard({ title, imageSrc, description, author }) {
   const { status, data: session } = useSession();
   const router = useRouter();
+  const [lookDescripcion, setMostrarDescripcion] = useState(false);
+  //show description
+  const toggleDescripcion = () => {
+    setMostrarDescripcion(!lookDescripcion);
+  };
 
   useEffect(() => {
     try{
@@ -45,7 +50,16 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
         <CardContent >
           <Typography gutterBottom variant="h6" component="div"> {title} </Typography>
           <Typography  variant="body2" color="text.secondary"> {author} </Typography>
-          <Typography variant="body2" color="text.secondary"> {description} </Typography>
+          {lookDescripcion && (
+            <Typography variant="body2" color="text.secondary" > {description} </Typography>
+          )}
+          <Grid item sx={{display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    weight: '100vh'}}>
+            <Button size="small" onClick={toggleDescripcion}>{lookDescripcion ? 'Less' : 'show more'}</Button>          
+          </Grid>
+          
         </CardContent>
 
         {/* Comments Button */}
@@ -57,7 +71,7 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
             <PopupState variant="popper" popupId="demo-popup-popper">
               {(popupState) => (
                 <Container>
-                  <Button variant="contained" {...bindToggle(popupState)}> Comment </Button>
+                  <Button size="small" variant="contained" {...bindToggle(popupState)}> Comment </Button>
                   <Popper {...bindPopper(popupState)} transition>
                     {({ TransitionProps }) => (
                       <Fade {...TransitionProps} timeout={350}>
@@ -79,7 +93,7 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
                     justifyContent: 'center',
                     weight: '100vh'}}>
           <CardActions >
-            <ButtonPDf code={title}/>
+            <ButtonPDf size="small" code={title}/>
           </CardActions>
         </Grid>
 
@@ -89,7 +103,7 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
                     justifyContent: 'center',
                     weight: '100vh'}}>
           <CardActions >
-            <Download Title={title}></Download>
+            <Download  Title={title}></Download>
           </CardActions>
         </Grid>
 

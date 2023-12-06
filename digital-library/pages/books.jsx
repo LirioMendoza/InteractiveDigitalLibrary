@@ -34,7 +34,7 @@ export default function BasicAppGrid() {
           {/* Shows the catalog */}
           {jsonData.map((book, index) => (
             <Grid item key={index} xs={6} sm={4} md={2} lg={2} sx={{ padding: 1.5 }}>
-              <ImgMediaCard title={book.title} imageSrc={book.imageSrc} description={book.description} />
+              <ImgMediaCard title={book.title} imageSrc={book.imageSrc} description={book.description} author={book.author}/>
             </Grid>
           ))}
 
