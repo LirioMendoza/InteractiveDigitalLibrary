@@ -21,14 +21,19 @@ Description: Gives the format for every book that will be showing in the catalog
 Data for the books will be taken from books.json
 */
 
-export default function ImgMediaCard({ title, imageSrc, description }) {
+export default function ImgMediaCard({ title, imageSrc, description, author }) {
   const { status, data: session } = useSession();
   const router = useRouter();
 
   useEffect(() => {
-    if (!(status === 'authenticated' && session)) {
-      router.push('/login'); //return to login page
+    try{
+      if (!(status === 'authenticated' && session)) {
+        router.push('/login'); //return to login page
+      }
+    }catch(error){
+      console.error('Error in useEffect:', error);
     }
+   
   }, [status, session, router]);
 
   try{
@@ -39,6 +44,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
         {/* This shows the title and author of the book showed */}
         <CardContent >
           <Typography gutterBottom variant="h6" component="div"> {title} </Typography>
+          <Typography  variant="body2" color="text.secondary"> {author} </Typography>
           <Typography variant="body2" color="text.secondary"> {description} </Typography>
         </CardContent>
 
@@ -90,7 +96,6 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
       </Card>
     );
     }catch(error){
-      
       console.error({ level: LOG_LEVELS.ERROR, message: 'Book could not be loaded.', error });
       <Alert severity="error">Error: Book could not be loaded</Alert>
     }
