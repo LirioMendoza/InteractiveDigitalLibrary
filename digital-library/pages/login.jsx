@@ -6,9 +6,10 @@ import { useRouter } from 'next/navigation';
 export default function Login() {
   const { status, data: session } = useSession();
   const router = useRouter();
+
   if (status === 'authenticated' && session) {
     router.push('/profile');
-  }else{
+  } else {
     return (
       <Grid 
         container
@@ -16,7 +17,9 @@ export default function Login() {
         alignItems='center'
         style={{ height: '100vh', marginTop: '-24px' }}
       >
-        <SignInBtn />
+        <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+          <SignInBtn />
+        </div>
       </Grid>
     );
   }

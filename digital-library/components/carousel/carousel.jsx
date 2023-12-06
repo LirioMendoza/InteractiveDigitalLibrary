@@ -16,28 +16,27 @@ to access to the catalog when the click on to one of them
 
 export default function CarouselBooks() {
     let carouselPath;
-    const { status, data: session } = useSession();
+    const { status, data: session, loading } = useSession();
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     if (status === 'authenticated' && session) {
         carouselPath = '/books';
-    }else{
+    } else {
         carouselPath = '/login';
     }
 
     return (
-        // Carousel 
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 0, }} 
-            item xs={12} justifyContent='center' alignContent='center' >
-            <Box type='div' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <Carousel sx={{width: 400, height: 500, m   : '1rem'}} >
-                    {slider.map(item => (
-                        // Mapping for the carousel
-                        <Paper key={item.id} component={Link} href={carouselPath} style={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                            <Image  src={item.image} alt={item.title} width={300} height={450} priority="true" loading="eager"/>
-                        </Paper>))
-                    }
-                </Carousel>
-            </Box>
+        <Grid container rowSpacing={1} columnSpacing={ 1 } item xs={12} justifyContent='center' alignContent='center' >
+            <Carousel sx={{ width: 400, height: 500, m: '1rem' }}>
+                {slider.map(item => (
+                    <Paper key={item.id} component={Link} href={carouselPath} style={{ width: 400, height: 450, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <Image src={item.image} alt={item.title} width={300} height={450} priority={true} loading="eager" />
+                    </Paper>
+                ))}
+            </Carousel>
         </Grid>
     )
 }
