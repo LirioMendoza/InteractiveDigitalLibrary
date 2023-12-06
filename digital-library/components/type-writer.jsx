@@ -47,7 +47,7 @@ const TypeWriter = ({ speed = 100 }) => {
         whiteSpace: 'pre-line',
         fontWeight: 'bold',
         fontStyle: 'italic',
-        marginBottom: '40px', // Ajusta este valor según sea necesario
+        marginBottom: '40px', 
       }}
     >
       {displayText}
