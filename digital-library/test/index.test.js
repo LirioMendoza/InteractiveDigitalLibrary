@@ -1,8 +1,16 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import CommentForm from '@/components/comments/Comment-Form';
+import ImgMediaCard from '@/components/card_books/card-media';
 
-
+describe('CommentForm', () => {
+  it('renders CommentForm component correctly', () => {
+    render(<CommentForm addComment={() => {}} />);
+    expect(document.getElementById('Rating'));
+    expect(document.getElementById('title'));
+    expect(document.getElementById('Add comment'));
+    
+  });
 
   it('allows user to input text in the Title and Comment fields', () => {
     render(<CommentForm addComment={() => {}} />);
@@ -32,7 +40,7 @@ import CommentForm from '@/components/comments/Comment-Form';
     expect(addCommentMock).toHaveBeenCalledWith({
       comment: 'Sample Comment',
       title: 'Sample Title',
-      rating: 0,  // Deberías ajustar esto si esperas un valor diferente
+      rating: 0,  
     });
     
     expect(titleInput.value).toBe('');
@@ -53,4 +61,4 @@ import CommentForm from '@/components/comments/Comment-Form';
     
     expect(addCommentMock).not.toHaveBeenCalled();
   });
-
+});
