@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import {Card, Grid, CardActions, Container, CardContent, CardMedia, Button, Typography, Fade, Paper, Popper} from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import {Card, Grid, CardActions, CardContent, CardMedia, Button, Typography} from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 import { Alert } from '@mui/material';
 import Download from '../download/downloads';
 import ButtonPDf from '@/components/read/button-Pdf';
 import Comments from '../comments/Comments';
-import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -23,17 +23,19 @@ const LOG_LEVELS = {
 
 /* 
 Description: Gives the format for every book that will be showing in the catalog. 
-Data for the books will be taken from books.json
+Data for the books will be taken from the data base.
 */
 
-export default function ImgMediaCard({ title, imageSrc, description, author }) {
+
+export default function ImgMediaCard({ resource_id, title, imageSrc, description, author }) {
   const { status, data: session } = useSession();
   const router = useRouter();
-  const [lookDescripcion, setMostrarDescripcion] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State
   //show description
   const toggleDescripcion = () => {
     setMostrarDescripcion(!lookDescripcion);
   };
+
 
   useEffect(() => {
     try{
@@ -70,30 +72,23 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
         </CardContent>
 
         {/* Comments Button */}
-        <Grid item sx={{display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    weight: '100vh'}}>
+        <Grid item sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          weight: '100vh'
+        }}>
           <CardActions>
-            <PopupState variant="popper" popupId="demo-popup-popper">
-              {(popupState) => (
-                <Container>
-                  <Button size="small" 
-                  variant="contained" {...bindToggle(popupState)} 
-                  sx={{ bgcolor:"primary.main", color:"primary.dark", 
-                  '&:hover': { bgcolor:'primary.dark', color:"secondary.contrastText" }, }} > Comment </Button>
-                  <Popper {...bindPopper(popupState)} transition>
-                    {({ TransitionProps }) => (
-                      <Fade {...TransitionProps} timeout={350}>
-                        <Paper>
-                          <Typography sx={{ p: 2 }}><Comments/></Typography>
-                        </Paper>
-                      </Fade>
-                    )}
-                  </Popper>
-                </Container>
-              )}
-            </PopupState>
+            <Button variant="contained" onClick={() => setIsModalOpen(true)}> Comment </Button>
+            <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)}>
+              <DialogTitle>{title}</DialogTitle>
+              <DialogContent>
+                <Comments resource_id={resource_id} />
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={() => setIsModalOpen(false)}>Close</Button>
+              </DialogActions>
+            </Dialog>
           </CardActions>
         </Grid>
 

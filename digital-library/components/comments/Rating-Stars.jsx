@@ -1,6 +1,7 @@
 import StarIcon from '@mui/icons-material/Star';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
-import { ThemeProvider } from '@mui/material/';
+import { ThemeProvider, Box} from '@mui/material/';
+import Theme from '@/styles/theme';
 
 /* 
 Description: Handles rating Stars between Filled and Empty
@@ -20,7 +21,7 @@ const RatingStars = ({ rating }) => {
     console.log({level: "SUCCESS", message: "Star raiting is displayed."});
 
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={Theme}>
         <Box type='div' style={{ display: 'flex' }}>
           {filledStars}
           {emptyStars}
