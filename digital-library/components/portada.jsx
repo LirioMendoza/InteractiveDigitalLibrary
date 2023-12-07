@@ -10,8 +10,8 @@ export default function Portada() {
     return( //Banner section
         <ThemeProvider theme={theme}>
             <Box  sx={{
-                background:'linear-gradient(5deg, #53B6A8 40%, #9657CD 80%)', 
-                color:'primary.contrastText',
+                background:'linear-gradient(5deg, #d5bbeb 20%, #ab78d7 80%)', 
+                color:'secondary.dark',
                 mb:'2.5rem',  
                 p:'2rem', 
                 width: '100%',

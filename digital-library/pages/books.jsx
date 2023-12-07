@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
-import { Alert, Card, Typography, Paper, Container } from '@mui/material';
+import { Alert, Typography } from '@mui/material';
 import Portada from '../components/portada';
 import ImgMediaCard from '@/components/card_books/card-media';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { getResources } from '@/utils/api'; //API
 
-/* BasicAppGrid 
-
+/*
 Description: Main section that encapsulates the catalog to show it.
-
 */
 
 export default function BasicAppGrid() {
@@ -44,7 +42,7 @@ export default function BasicAppGrid() {
           <Portada />
           {resources.map((resource) => (
             <Grid item key={resource._id} xs={6} sm={4} md={2} lg={2} sx={{ padding: 1.5 }}>
-              <ImgMediaCard resource_id={resource._id} title={resource.title} imageSrc={resource.imageSrc} description={resource.description} />
+              <ImgMediaCard resource_id={resource._id} title={resource.title} author={resource.author} imageSrc={resource.imageSrc} description={resource.description} />
             </Grid>
           ))}
 
