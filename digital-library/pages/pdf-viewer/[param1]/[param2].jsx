@@ -3,14 +3,7 @@ import React, { useReducer } from 'react';
 import { useRouter } from 'next/router';
 import PDFViewer from '@/components/read/pdf-viewer';
 import Portada from '@/components/portada';
-
-const LOG_LEVELS = {
-  INFO: 'INFO',
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
-  WARNING: 'WARNING',
-  DEBUG: 'DEBUG',
-};
+import { LOG_LEVELS } from '@/constants/constants';
 
 const PdfRead = () => {
   const router = useRouter();//returns the parameters passed through the route

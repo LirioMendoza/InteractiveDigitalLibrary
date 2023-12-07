@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from '@/pages/home';
+
 const LOG_LEVELS = {
   INFO: 'INFO',
   SUCCESS: 'SUCCESS',

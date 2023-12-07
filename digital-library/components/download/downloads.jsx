@@ -2,19 +2,13 @@
 import { Button } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import DownloadBooks from '@/components/download/Dowload-books.json';
+import { LOG_LEVELS } from '@/constants/constants';
+import { logToMemory } from '../logging/logger';
 
 /*  
 Description: Encapsulates the download section, 
 handling the link for each book from the catalog
 */ 
-
-const LOG_LEVELS = {
-  INFO: 'INFO',
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
-  WARNING: 'WARNING',
-  DEBUG: 'DEBUG',
-};
 
 const searchKeyIndex = (searchkey) => {
 // Find the index of the key in the array
@@ -28,9 +22,9 @@ const searchKeyIndex = (searchkey) => {
 //Handling Downloading of a book
 const DownloadButton = ({ title }) => {
   const handleDownload = (url, filename) => {
-    console.log({ level: LOG_LEVELS.INFO, message: 'The download has started.' });
-    console.debug({ level: LOG_LEVELS.INFO, message: 'Trying to create the download link.' });
-    console.debug({ level: LOG_LEVELS.DEBUG, message: 'URL:', url });
+    logToMemory({ level: LOG_LEVELS.INFO, message: 'The download has started.' });
+    logToMemory({ level: LOG_LEVELS.INFO, message: 'Trying to create the download link.' });
+    logToMemory({ level: LOG_LEVELS.DEBUG, message: 'URL:', url });
 
     try {
       //Creates a link in the document
@@ -43,7 +37,7 @@ const DownloadButton = ({ title }) => {
       link.click();
       document.body.removeChild(link);
 
-      console.log({ level: LOG_LEVELS.SUCCESS, message: 'The download has been completed successfully.' });
+      logToMemory({ level: LOG_LEVELS.SUCCESS, message: 'The download has been completed successfully.' });
     } catch (error) {
         console.error({ level: LOG_LEVELS.ERROR, message: 'An error occurred during the download.', error });
     }

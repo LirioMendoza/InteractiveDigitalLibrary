@@ -10,10 +10,12 @@ import SelectStars from './Select-Stars';
 import SubmitButton from './Submit-Button';
 import { ThemeProvider } from '@mui/material/';
 
+
 /* 
 Description: Handles every part of the comment Form.
 */
 
+//const log = require('../logger');
 const CommentForm = ({ addComment }) => {
 
   const [rating, setRating] = useState(0); 

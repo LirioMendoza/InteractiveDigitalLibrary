@@ -7,14 +7,8 @@ import Comments from '../comments/Comments';
 import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-
-const LOG_LEVELS = {
-  INFO: 'INFO',
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
-  WARNING: 'WARNING',
-  DEBUG: 'DEBUG',
-};
+import { LOG_LEVELS } from '@/constants/constants';
+import { logToMemory } from '../logging/logger';
 
 /* 
 Description: Gives the format for every book that will be showing in the catalog. 
@@ -32,7 +26,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
   }, [status, session, router]);
 
   try{
-    console.debug({ level: LOG_LEVELS.DEBUG, message: 'Trying to show the Cards Media of the books' });
+    logToMemory({ level: LOG_LEVELS.DEBUG, message: 'Trying to show the Cards Media of the books' });
     return (
       <Card sx={{ maxWidth: 200, height:"300"}}>
         <CardMedia component="img" alt={title} height="250" image={imageSrc} />
@@ -91,7 +85,7 @@ export default function ImgMediaCard({ title, imageSrc, description }) {
     );
     }catch(error){
       
-      console.error({ level: LOG_LEVELS.ERROR, message: 'Book could not be loaded.', error });
+      logToMemory({ level: LOG_LEVELS.ERROR, message: 'Book could not be loaded.', error });
       <Alert severity="error">Error: Book could not be loaded</Alert>
     }
 }

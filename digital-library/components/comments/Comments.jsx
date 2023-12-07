@@ -8,6 +8,7 @@ import { Typography, Box  } from '@mui/material';
 /* 
 Description: Encapsulates the main section for comments section.
 */ 
+//const log = require('../logger');
 
 export default function Comments() {
   console.log({ level: "INFO", message: 'Trying to show Comments module.' });

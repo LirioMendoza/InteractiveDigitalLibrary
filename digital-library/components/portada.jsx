@@ -11,17 +11,14 @@ export default function Portada() {
         <ThemeProvider theme={theme}>
             <Box  sx={{
                 background:'linear-gradient(5deg, #53B6A8 40%, #9657CD 80%)', 
-                color:'primary.contrastText',
-                mb:'2.5rem',  
-                p:'2rem', 
-                width: '100%',
+                color:'primary.contrastText', width: '100%',
                 display:'flex', 
                 flexDirection:'column', 
-                fontWeight: 'bold', 
+                fontWeight:'bold', 
                 }}>
                 <Container>
-                    <Typography variant='h3' sx={{ fontWeight: 'bold', m:'1rem', textAlign:'center'}}>UNAM e-Books</Typography>
-                    <Typography variant='h5' sx={{ fontWeight: 'bold', m:'1rem', textAlign:'center'}}>Books and magazines for all university students.</Typography>
+                    <Typography variant='h3' sx={{ fontWeight:'bold', m:'1rem', textAlign:'center'}}>UNAM e-Books</Typography>
+                    <Typography variant='h5' sx={{ fontWeight:'bold', m:'1rem', textAlign:'center'}}>Books and magazines for all university students.</Typography>
                 </Container>
             </Box>
     </ThemeProvider>

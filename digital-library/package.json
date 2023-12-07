@@ -14,8 +14,11 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
+    "debug": "^4.3.4",
+    "fs": "^0.0.1-security",
     "i": "^0.3.7",
     "jest-environment-jsdom": "^29.7.0",
+    "loglevel": "^1.8.1",
     "material-ui-popup-state": "^5.0.10",
     "next": "14.0.3",
     "next-auth": "^4.24.5",
@@ -23,7 +26,8 @@
     "react-dom": "^18",
     "react-material-ui-carousel": "^3.4.2",
     "react-pdf": "^7.5.1",
-    "react-router-dom": "^6.20.0"
+    "react-router-dom": "^6.20.0",
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "eslint": "^8",

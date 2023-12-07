@@ -10,14 +10,8 @@ import ZoomOutIcon from '@mui/icons-material/ZoomOut';
 import jsonData from './Books.json';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-
-const LOG_LEVELS = {
-  INFO: 'INFO',
-  SUCCESS: 'SUCCESS',
-  ERROR: 'ERROR',
-  WARNING: 'WARNING',
-  DEBUG: 'DEBUG',
-};
+import { LOG_LEVELS } from '@/constants/constants';
+import { logToMemory } from '../logging/logger';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -80,7 +74,10 @@ function PDFViewer({KEY, INDEX}) {
         }
       }, []);
       if (typeof window !== 'undefined') {
-        if(window.innerWidth >= 900 && window.innerHeight >= 500){
+        if(window.innerWidth >= 1200 && window.innerHeight >= 500){
+          width = (window.innerWidth - 700)/2;
+          height = (window.innerHeight - 400)/2;
+        }else if(window.innerWidth >= 900 && window.innerHeight >= 500){
           width = (window.innerWidth - 300)/2;
           height = (window.innerHeight - 100)/2;
         }else{
@@ -89,9 +86,9 @@ function PDFViewer({KEY, INDEX}) {
         }
         
       }
-      console.log({ level: LOG_LEVELS.INFO, message: `The width of the window is: "${windowSize.width}" and the height is: ${windowSize.height}`});
+      logToMemory({ level: LOG_LEVELS.INFO, message: `The width of the window is: "${windowSize.width}" and the height is: ${windowSize.height}`});
       /*The PDF viewer returns, with buttons to change the page and zoom into the document*/
-      console.log({ level: LOG_LEVELS.SUCCESS, message: `The key "${KEY}" is located in the ${rutes[INDEX]} path of the Map.`});
+      logToMemory({ level: LOG_LEVELS.SUCCESS, message: `The key "${KEY}" is located in the ${rutes[INDEX]} path of the Map.`});
       return (
         <ThemeProvider theme={Theme}>
           <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 0 }} >
@@ -198,12 +195,12 @@ function PDFViewer({KEY, INDEX}) {
 
       
     } catch (error) {
-      console.error({ level: LOG_LEVELS.ERROR, message: 'An Error has occurred: Book not found.', error });
+      logToMemory({ level: LOG_LEVELS.ERROR, message: 'An Error has occurred: Book not found.', error });
     }
   }
 
   return (
-    <Box type='div'> Loading... </Box> // Puedes mostrar un mensaje de carga mientras se verifica la sesión
+    <Box type='div'> Loading... </Box> 
   );
 }
 
