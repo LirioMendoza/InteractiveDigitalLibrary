@@ -91,12 +91,6 @@ const CommentForm = ({ addComment }) => {
             rows={4}
           />
         </FormControl>
-
-        {/* Add comment Button */}
-  
-        <SubmitButton onClick={handleSubmit} label="Add comment"/>
-      
-      
       </Box>
     </ThemeProvider>
   );

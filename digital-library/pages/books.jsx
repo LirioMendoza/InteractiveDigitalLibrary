@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { Alert, Card, Typography, Paper, Container } from '@mui/material';
 import Portada from '../components/portada';
 import ImgMediaCard from '@/components/card_books/card-media';
-import jsonData from '@/components/card_books/books.json';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { getResources } from '@/utils/api'; //API
 
 /* BasicAppGrid 
 
@@ -17,11 +17,23 @@ export default function BasicAppGrid() {
 
   const { status, data: session } = useSession();
   const router = useRouter();
+  const [resources, setResources] = useState([]);
 
   useEffect(() => {
      if (!(status === 'authenticated' && session)) { //if the user doesn't have a session
       router.push('/login'); //returns to login page
      }
+     async function fetchResources() {
+      try {
+        const data = await getResources();
+        console.log({ level: "INFO", message: 'Trying to get resources from DB.', data: data });
+        setResources(data);
+      } catch (error) {
+        console.error('Error fetching Resources:', error);
+      }
+    }
+
+    fetchResources();
   }, [status, session, router]);
 
   if (status === 'authenticated' && session) { //if the user has a session
@@ -30,11 +42,9 @@ export default function BasicAppGrid() {
     return (
       <Grid container spacing={0.5}>
           <Portada />
-
-          {/* Shows the catalog */}
-          {jsonData.map((book, index) => (
-            <Grid item key={index} xs={6} sm={4} md={2} lg={2} sx={{ padding: 1.5 }}>
-              <ImgMediaCard title={book.title} imageSrc={book.imageSrc} description={book.description} />
+          {resources.map((resource) => (
+            <Grid item key={resource._id} xs={6} sm={4} md={2} lg={2} sx={{ padding: 1.5 }}>
+              <ImgMediaCard resource_id={resource._id} title={resource.title} imageSrc={resource.imageSrc} description={resource.description} />
             </Grid>
           ))}
 
