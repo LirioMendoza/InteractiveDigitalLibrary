@@ -1,20 +1,19 @@
 "use client";
 import { createTheme } from '@mui/material';
-import { lightBlue, red, } from '@mui/material/colors';
 
 const Theme = createTheme({
     palette: {
         mode: 'light',
            primary: {
-                   main: '#29a493',
-                   light: '#53B6A8',
-                   dark: '#1C7266',
-                   contrastText: '#fff',
+                   main: '#76ddff',
+                   light: '#c8f1ff',
+                   dark: '#2f5866',
+                   contrastText: '#172c33',
            },
            secondary: {
-                   main: '#7c2ec1',
+                   main: '#bc8fd4',
                    light:'#9657CD',
-                   dark: '#562087',
+                   dark: '#270a33',
                    contrastText: '#fff',
            },
            discord: {

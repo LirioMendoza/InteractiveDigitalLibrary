@@ -13,7 +13,7 @@ import { ThemeProvider } from '@mui/material/';
 Description: Handles every part of the comment Form.
 */
 
-const CommentForm = ({ onAddComment }) => {
+const CommentForm = ({ addComment }) => {
 
   const [rating, setRating] = useState(0); 
   const [title, setTitle] = useState('');
@@ -25,7 +25,7 @@ const CommentForm = ({ onAddComment }) => {
   };
 
   //Handling Submit Comment 
-  const handleAddComment = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.info({level: "INFO", message: "Trying to submit comment form."});
     try {
@@ -33,7 +33,8 @@ const CommentForm = ({ onAddComment }) => {
       if (title.trim() === '' || comment.trim() === '' || rating < 0 || rating > 5) {
         throw new Error("Invalid arguments");
       }
-      onAddComment({ comment, title, rating });
+
+      addComment({ comment, title, rating });
       setComment('');
       setTitle('');
       setRating(0);
@@ -57,8 +58,8 @@ const CommentForm = ({ onAddComment }) => {
         {/* Rating section */}
         <FormControl fullWidth margin="normal">
           <Stack direction="row" spacing={2} justifyContent="center">
-           <InputLabel htmlFor="rating">Rating</InputLabel>
-           <SelectStars onRatingChange={handleRatingChange} id="rating" />
+            <InputLabel >Rating</InputLabel>
+            <SelectStars onRatingChange={handleRatingChange} />
           </Stack>
         </FormControl>
 
@@ -89,20 +90,6 @@ const CommentForm = ({ onAddComment }) => {
             rows={4}
           />
         </FormControl>
-
-        {/* Add comment Button */}
-  
-        <Button 
-            variant='contained' 
-            color='primary'
-            onClick={handleAddComment} 
-            fullWidth
-          >
-          Add Comment
-        </Button>
-
-      
-      
       </Box>
     </ThemeProvider>
   );
