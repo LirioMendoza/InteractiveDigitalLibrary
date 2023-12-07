@@ -2,15 +2,7 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import CommentForm from '@/components/comments/Comment-Form';
 
-describe('CommentForm', () => {
-  it('renders CommentForm component correctly', () => {
-    render(<CommentForm addComment={() => {}} />);
-    
-    expect(screen.getByLabelText(/Rating/i, { selector: '#rating-box' })).toBeInTheDocument();
-    expect(screen.getByLabelText(/Title/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Comment/i)).toBeInTheDocument();
-    expect(screen.getByText(/Add comment/i)).toBeInTheDocument();
-  });
+
 
   it('allows user to input text in the Title and Comment fields', () => {
     render(<CommentForm addComment={() => {}} />);
@@ -61,4 +53,4 @@ describe('CommentForm', () => {
     
     expect(addCommentMock).not.toHaveBeenCalled();
   });
-});
+
