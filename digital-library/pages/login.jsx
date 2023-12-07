@@ -13,16 +13,20 @@ export default function Login() {
 
   if (status === 'authenticated' && session) {
     router.push('/profile');
-  }
 
-  return (
-    <Grid 
-      container
-      justifyContent='center'
-      alignItems='center'
-      style={{ height: '100vh', marginTop: '-24px' }}
-    >
-      <SignInBtn />
-    </Grid>
-  );
+  } else {
+    return (
+      <Grid 
+        container
+        justifyContent='center'
+        alignItems='center'
+        style={{ height: '100vh', marginTop: '-24px' }}
+      >
+        <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+          <SignInBtn />
+        </div>
+      </Grid>
+    );
+  }
 }
+
