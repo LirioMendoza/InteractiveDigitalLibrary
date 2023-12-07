@@ -7,6 +7,10 @@ import Banner from "@/components/banner/banner";
 import Promotions from "@/components/promotions/promotions";
 import MyApp from "./_app";
 
+/*
+Description: Home Page for the Library
+*/
+
 export default function Home(){
  
     return(

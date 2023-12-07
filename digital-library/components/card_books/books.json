@@ -2,109 +2,125 @@
     {
       "title":"Alicia en el país de las maravillas",
       "imageSrc":"https://m.media-amazon.com/images/I/7185CkaIBVL._AC_UF1000,1000_QL80_.jpg",
-      "description":"Lewis Carroll",
+      "description":"La historia sigue a una joven llamada Alicia que, al perseguir a un conejo blanco, cae por una madriguera y entra en un mundo surrealista lleno de personajes peculiares y situaciones absurdas. ",
+      "author":"Lewis Carroll",
       "type": "book"
   
     },
     {
       "title":"Aura",
       "imageSrc":"https://m.media-amazon.com/images/I/71hh0HTdZMS._AC_UF1000,1000_QL80_.jpg",
-      "description":"Carlos Fuentes",
+      "description":"La historia sigue a Felipe Montero, un escritor que acepta un trabajo como editor de las memorias de una anciana llamada Consuelo. ",
+      "author":"Carlos Fuentes",
       "type": "book"
   
     },
     {
       "title":"Sor Juana en la cocina",
       "imageSrc":"https://www.planetadelibros.com.mx/usuaris/libros/fotos/314/m_libros/portada_sor-juana-en-la-cocina_monica-lavin_202105212241.jpg",
-      "description":"Mónica Laven, Ana Benítez",
+      "description":"Explora las interesantes recetas de Sor Juana Inés de la Cruz y conoce más sobre su historia.",
+      "author":"Mónica Laven, Ana Benítez",
       "type": "book"
   
     },
     {
       "title":"El pueblo del Sol",
       "imageSrc":"https://m.media-amazon.com/images/I/719HB8XD1eL._AC_UF1000,1000_QL80_.jpg",
-      "description":"Alfonso Caso",
+      "author":"Alfonso Caso",
+      "description":"El conocimiento del mundo espiritual azteca resulta indispensable Para emprender el estudio a fondo de su vision del mundo y tratar de comprender su modo de reaccionar frente a la naturaleza y frente al hombre en el intenso drama de su historia",
       "type": "book"
   
     },
     {
       "title":"Erase una vez en México",
       "imageSrc":"https://www.planetadelibros.com.mx/usuaris/libros/fotos/265/m_libros/portada_erase-una-vez-mexico-1_alejandro-rosas_201803222027.jpg",
-      "description":"Sandra Molina, Alejandro Rosas",
+      "description":"Esta es la historia de un grupo de hombres que comenzó en las cavernas y luego de miles de años, encontraron una señal: un águila posada en un nopal devorando una serpiente.",
+      "author":"Sandra Molina, Alejandro Rosas",
       "type": "book"
   
     },
     {
       "title":"Descubre la extinción",
       "imageSrc":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStfq3VR_IyYPjyPH8N3GzOQs8G4sznoLkDg-g8XNgm1uu9jaXfcG8z1nRsJkHbbSeSQlw&usqp=CAU",
-      "description":"Jeff Bloom"
+      "description":"Explora cómo la actividad humana, el consumo de combustibles fósiles, la acidificación de los océanos, la contaminación, la deforestación y las migraciones forzadas amenazan contra formas de vida de todo tipo. ",
+      "author":"Jeff Bloom"
   
     },
     {
       "title":"Harry Potter y la piedra filosofal",
       "imageSrc":"https://http2.mlstatic.com/D_NQ_NP_606457-MLM49297976616_032022-O.webp",
-      "description":"J. K. Rowling",
+      "description":"es el primer libro de la famosa serie escrita por J.K. Rowling. Publicado en 1997, el libro sigue las peripecias de Harry Potter, un niño huérfano que descubre que es un mago y ha sido aceptado en la Escuela de Magia y Hechicería de Hogwarts. ",
+      "author":"J. K. Rowling",
       "type": "book"
   
     },
     {
       "title":"La Ilíada y la Odisea",
       "imageSrc":"https://cdn.kobo.com/book-images/ae818875-9a13-429d-b3ab-da32dc3bd90d/1200/1200/False/la-iliada-y-la-odisea-10.jpg",
-      "description":"Homero",
+      "description":"La Ilíada y la Odisea son dos de las obras literarias más importantes de la antigua Grecia, atribuidas al poeta épico griego Homero. ",
+      "author":"Homero",
       "type": "book"
   
     },
     {
       "title":"Obras selectas de Julio Verne",
       "imageSrc":"https://editoresmexicanosunidos.mx/wp-content/uploads/2022/02/fractales-julio-verne.png",
-      "description":"Julio Verne",
+      "description":"Descubre todas las obras del gran escritor Julio Verne",
+      "author":"Julio Verne",
       "type": "book"
   
     },
     {
-      "title":"Las batallas en ell desierto",
+      "title":"Las batallas en el desierto",
       "imageSrc":"https://elemblob.blob.core.windows.net/media/las-batallas57a23054e838a_300h.jpg",
-      "description":"José Emilio Pacheco",
+      "description":"Publicada por primera vez en 1981, la historia está ambientada en la Ciudad de México en la década de 1940 y se centra en la vida de Carlos, un joven estudiante de secundaria",
+      "author":"José Emilio Pacheco",
       "type": "book"
   
     },
     {
       "title":"La Torre y el Jardín",
       "imageSrc":"https://www.lashistorias.com.mx/wp-content/uploads/2012/11/La-torre-y-el-jard%C3%ADn-Alberto-Chimal-e1357519253590.jpg",
-      "description":"Alberto Chimal",
+      "description":"Dos hombres despiertan en celdas contiguas de un sorprendente burdel. Uno viste como astronauta, el otro ha decidido aclarar un siniestro recuerdo infantil que involucra a la legendaria señora Isabel, quien resuelve a golpe de magia cada problema de ese lugar.",
+      "author":"Alberto Chimal",
       "type": "book"
     },
     {
       "title":"Moby-Dick",
       "imageSrc":"https://www.udllibros.com/imagenes/9788415/978841560143.JPG",
-      "description":"Herman Melville",
+      "description":"Moby-Dick es una novela escrita por Herman Melville y publicada por primera vez en 1851. Es considerada una de las obras maestras de la literatura estadounidense y una de las novelas más importantes de la literatura mundial.",
+      "author":"Herman Melville",
       "type": "book"
   
     },
     {
       "title":"Mujercitas",
       "imageSrc":"https://m.media-amazon.com/images/I/91Op0BdHd0L._AC_UF1000,1000_QL80_.jpg",
-      "description":"Louisa May Alcott",
+      "description":"La historia sigue las vidas de las cuatro hermanas March: Meg, Jo, Beth y Amy, mientras crecen desde la adolescencia hasta la adultez durante y después de la Guerra Civil estadounidense.",
+      "author":"Louisa May Alcott",
       "type": "book"
     },
     {
       "title":"La naranja mecánica",
       "imageSrc":"https://images.cdn1.buscalibre.com/fit-in/360x360/81/22/812252fdfa443853ac4f0c38d89a9690.jpg",
-      "description":"Anthony Burgess",
+      "description":"La historia está ambientada en una sociedad distópica futurista y sigue a Alex, un joven delincuente y líder de una pandilla, quien se somete a un experimento de modificación de la conducta conocido como el Tratamiento Ludovico para corregir su comportamiento violento.",
+      "author":"Anthony Burgess",
       "type": "book"
   
     },
     {
       "title":"Orgullo y Prejuicio",
       "imageSrc":"https://assets-global.website-files.com/6034d7d1f3e0f52c50b2adee/625452ebb0e15e764981b44c_6034d7d1f3e0f55fcab2b2de_Orgullo-y-prejuicio-jane-austen-editorial-alma.jpeg",
-      "description":"Jane Austen",
+      "description":"Es una novela escrita por Jane Austen y publicada por primera vez en 1813. La obra es una de las novelas más conocidas y amadas de la literatura inglesa y es un clásico de la literatura romántica.",
+      "author":"Jane Austen",
       "type": "book"
   
     },
     {
       "title":"La teoría del todo",
       "imageSrc":"https://m.media-amazon.com/images/I/916d6cobjqL._AC_UF1000,1000_QL80_.jpg",
-      "description":"Stephen W. Hakwing",
+      "description":" La obra relata la vida de Stephen Hawking, el famoso físico teórico, cosmólogo y autor de Breve historia del tiempo, desde su infancia hasta sus contribuciones significativas al campo de la física, a pesar de enfrentar la esclerosis lateral amiotrófica (ELA).",
+      "author":"Stephen W. Hakwing",
       "type": "book"
   
     },

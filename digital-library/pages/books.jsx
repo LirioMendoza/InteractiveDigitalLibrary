@@ -7,10 +7,8 @@ import jsonData from '@/components/card_books/books.json';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
-/* BasicAppGrid 
-
+/*
 Description: Main section that encapsulates the catalog to show it.
-
 */
 
 export default function BasicAppGrid() {
@@ -34,7 +32,7 @@ export default function BasicAppGrid() {
           {/* Shows the catalog */}
           {jsonData.map((book, index) => (
             <Grid item key={index} xs={6} sm={4} md={2} lg={2} sx={{ padding: 1.5 }}>
-              <ImgMediaCard title={book.title} imageSrc={book.imageSrc} description={book.description} />
+              <ImgMediaCard title={book.title} author={book.author} imageSrc={book.imageSrc} description={book.description} />
             </Grid>
           ))}
 
