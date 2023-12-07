@@ -2,13 +2,9 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/navbar/navbar'
 import { NextAuthProvider } from '../app/Providers'
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
-import Home from './home';
-
+import { CssBaseline } from '@mui/material'
 
 function MyApp({ Component, pageProps }) {
-
-  
 
   return (
    

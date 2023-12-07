@@ -1,8 +1,7 @@
 'use client';
 
-import { AppBar, Box, Button, Drawer, Toolbar, IconButton, Typography, Menu, ThemeProvider, List, ListItem, ListItemButton, ListItemText, Avatar } from '@mui/material';
+import { AppBar, Box, Button, Drawer, Toolbar, IconButton, Typography, ThemeProvider, List, ListItem, ListItemButton, ListItemText, Avatar } from '@mui/material';
 import { useSession } from 'next-auth/react';
-import Image from 'next/image';
 import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import Theme from '@/styles/theme';
@@ -44,13 +43,13 @@ export default function Navbar({ navArrayLinks }) {
                     <Button
                       component={Link}
                       href={item.path}
-                      color='inherit'
-                      sx={{
+                      sx={{ color:'primary.contrastText', 
                         '&:hover': {
-                          backgroundColor: '#aaf0aa',
+                          backgroundColor: 'primary.dark',
+                          color:'primary.light'
                         },
                         ...(item.title === 'Login' && {
-                          backgroundColor: '#006400',
+                          backgroundColor: 'primary.light',
                           padding: '8px 16px',
                           borderRadius: '4px',
                         }),
@@ -65,11 +64,12 @@ export default function Navbar({ navArrayLinks }) {
   
             {/* Menu button for smaller devices */}
             <Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
-              <IconButton
+              <IconButton 
                 color="inherit"
                 size="large"
                 onClick={() => setOpen(true)}
-                edge="start"
+                edge="start" 
+                
               >
                 <MenuIcon />
               </IconButton>
@@ -82,7 +82,7 @@ export default function Navbar({ navArrayLinks }) {
               onClose={() => setOpen(false)}
               sx={{ display: { xs: 'flex', sm: 'none' } }}
             >
-              <AppBar>
+              <AppBar sx={{ '&:hover': {backgroundColor: 'primary.light' }}}>
                 <List>
                   {navArrayLinks.map(item => (
                     <ListItem

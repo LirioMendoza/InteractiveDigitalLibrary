@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Box, Typography } from '@mui/material';
+import { Paper } from '@mui/material';
 import Image from 'next/image';
 import slider from "./slider.json";
 import { Grid } from '@mui/material';

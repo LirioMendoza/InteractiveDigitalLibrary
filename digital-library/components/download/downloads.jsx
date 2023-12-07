@@ -63,8 +63,8 @@ const DownloadButton = ({ title }) => {
         color="primary"
         startIcon={<DownloadIcon />}
 
-        sx={{ width: '100%', bgcolor:"secondary.light", 
-                  '&:hover': { bgcolor:'secondary.dark', }, }}
+        sx={{ width: '100%',  bgcolor:"primary.main", color:"primary.dark", 
+                  '&:hover': { bgcolor:'primary.dark', color:"secondary.contrastText" }, }}
       >
         Download
       </Button>

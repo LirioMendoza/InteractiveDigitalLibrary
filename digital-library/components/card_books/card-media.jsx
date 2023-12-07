@@ -8,8 +8,10 @@ import PopupState, { bindToggle, bindPopper } from 'material-ui-popup-state';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import Theme from '@/styles/theme';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const LOG_LEVELS = {
   INFO: 'INFO',
@@ -61,8 +63,8 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     weight: '100vh'}}>
-            <Button sx={{ color:"primary.dark", }}  
-            size="small" onClick={toggleDescripcion}>{lookDescripcion ? 'Less' : 'show more'}</Button>          
+            <Button sx={{ color:"secondary.main", }}  
+            size="small" onClick={toggleDescripcion}>{lookDescripcion ? <ArrowDropUpIcon sx={{ fontSize: 50 }}/> : <ArrowDropDownIcon sx={{ fontSize: 50 }}/> }</Button>          
           </Grid>
           
         </CardContent>
@@ -78,8 +80,8 @@ export default function ImgMediaCard({ title, imageSrc, description, author }) {
                 <Container>
                   <Button size="small" 
                   variant="contained" {...bindToggle(popupState)} 
-                  sx={{ bgcolor:"secondary.light", 
-                  '&:hover': { bgcolor:'secondary.dark', }, }} > Comment </Button>
+                  sx={{ bgcolor:"primary.main", color:"primary.dark", 
+                  '&:hover': { bgcolor:'primary.dark', color:"secondary.contrastText" }, }} > Comment </Button>
                   <Popper {...bindPopper(popupState)} transition>
                     {({ TransitionProps }) => (
                       <Fade {...TransitionProps} timeout={350}>

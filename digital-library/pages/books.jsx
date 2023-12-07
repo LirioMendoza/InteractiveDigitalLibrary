@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
-import { Alert, Card, Typography, Paper, Container } from '@mui/material';
+import { Alert, Typography } from '@mui/material';
 import Portada from '../components/portada';
 import ImgMediaCard from '@/components/card_books/card-media';
 import jsonData from '@/components/card_books/books.json';

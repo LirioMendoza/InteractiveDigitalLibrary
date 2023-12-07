@@ -1,5 +1,5 @@
 import SignInBtn from '@/components/signin-btn';
-import { Grid } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
@@ -20,11 +20,11 @@ export default function Login() {
         container
         justifyContent='center'
         alignItems='center'
-        style={{ height: '100vh', marginTop: '-24px' }}
+        style={{ height: '100vh', marginTop: '24px' }}
       >
-        <div style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+        <Box component='div' style={{ border: '2px solid #ccc', padding: '10px', borderRadius: '5px' }}>
           <SignInBtn />
-        </div>
+        </Box>
       </Grid>
     );
   }

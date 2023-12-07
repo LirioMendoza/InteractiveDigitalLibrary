@@ -31,8 +31,8 @@ const ContainerPdf = (title, ind) => {
             variant="contained"
             startIcon={<PictureAsPdfIcon />}
             
-            sx={{ width: '100%', bgcolor:"secondary.light", 
-                  '&:hover': { bgcolor:'secondary.dark', }, }}
+            sx={{ width: '100%',  bgcolor:"primary.main", color:"primary.dark", 
+            '&:hover': { bgcolor:'primary.dark', color:"secondary.contrastText" }, }}
           >
             READ
           </Button>
