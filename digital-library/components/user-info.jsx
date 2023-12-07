@@ -18,9 +18,9 @@ export default function UserInfo() {
                 <Grid item xs={12} md={4}>
                     <Card >
                     <CardContent >
-                        <Typography variant="h4"sx={{textAlign: 'center'}}>{session?.user.name}</Typography>
-                        <Avatar src={session?.user?.image} sx={{ width: '75%', height: '75%',bgcolor: 'white', margin: 'auto'}} />
-                        <Typography variant="body1" paragraph sx={{textAlign: 'center'}}>
+                        <Typography variant="h6"sx={{textAlign: 'center'}}>{session?.user.name}</Typography>
+                        <Avatar src={session?.user?.image} sx={{ width: '50%', height: '50%',bgcolor: 'white', margin: 'auto'}} />
+                        <Typography variant="body1" paragraph sx={{textAlign: 'center', mt: '10px'}}>
                             {session?.user?.email}
                         </Typography>
                         <Button

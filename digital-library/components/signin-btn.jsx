@@ -25,11 +25,9 @@ export default function SignInBtn() {
                     <LockOutlinedIcon />
                 </Avatar>
 
-                
                 <Typography component='h1' variant='h3'>
                     Sign in
                 </Typography>
-
                 <Box component='form' noValidate sx={{ mt: 1}}>
                     <TextField
                         margin='normal'
@@ -121,7 +119,6 @@ export default function SignInBtn() {
 
 
                 </Box>
-
             </Box>
         </Container>
     </ThemeProvider>

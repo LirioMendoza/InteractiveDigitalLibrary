@@ -15,15 +15,12 @@ to access to the catalog when the click on to one of them
 */
 
 export default function CarouselBooks() {
-    let carouselPath;
+    let carouselPath = '/login';
     const { status, data: session } = useSession();
 
     if (status === 'authenticated' && session) {
         carouselPath = '/books';
-    }else{
-        carouselPath = '/login';
     }
-
     return (
         // Carousel 
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 0, md: 0, }} 
