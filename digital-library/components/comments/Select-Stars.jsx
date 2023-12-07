@@ -12,29 +12,23 @@ and depending on the user's click, selects the stars for the rating
 const SelectStars = ({ onRatingChange }) => {
   const [rating, setRating] = useState(0);
 
-  //Handling New Rating 
   const handleClick = (newRating) => {
     try {
       newRating = rating === newRating ? 0 : newRating;
       setRating(newRating);
       onRatingChange(newRating);
-      console.log({ level: "SUCCESS", message: 'A new rating has been setted.'});
+      console.log({ level: "SUCCESS", message: 'A new rating has been set.' });
     } catch (error) {
-      console.error({ level: "ERROR", message: 'An error occurred while setting a new rating.', error});
+      console.error({ level: "ERROR", message: 'An error occurred while setting a new rating.', error });
     }
   };
 
   return (
-    //Rating section
     <ThemeProvider theme={Theme}>
-      <Box component='div' sx={ {display:'block'}}>
+      <Box component='div' sx={{ display: 'block' }} id="rating-box">
         {[1, 2, 3, 4, 5].map((index) => (
-          <Typography sx={{display:'inline'}} key={index} onClick={() => handleClick(index)} >
-            {index <= rating ? <StarIcon  sx={{ color:"secondary.main", 
-                                  '&:hover': {  color:'secondary.dark', },
-            }} /> : <StarBorderIcon sx={{color:"secondary.main",  
-                            '&:hover': { color: 'secondary.dark',  },
-            }} />}
+          <Typography sx={{ display: 'inline' }} key={index} onClick={() => handleClick(index)}>
+            {index <= rating ? <StarIcon sx={{ color: "secondary.main", '&:hover': { color: 'secondary.dark', }, }} /> : <StarBorderIcon sx={{ color: "secondary.main", '&:hover': { color: 'secondary.dark', }, }} />}
           </Typography>
         ))}
       </Box>

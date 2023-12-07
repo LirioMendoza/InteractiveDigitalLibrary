@@ -57,8 +57,8 @@ const CommentForm = ({ onAddComment }) => {
         {/* Rating section */}
         <FormControl fullWidth margin="normal">
           <Stack direction="row" spacing={2} justifyContent="center">
-            <InputLabel >Rating</InputLabel>
-            <SelectStars onRatingChange={handleRatingChange} />
+           <InputLabel htmlFor="rating">Rating</InputLabel>
+           <SelectStars onRatingChange={handleRatingChange} id="rating" />
           </Stack>
         </FormControl>
 
