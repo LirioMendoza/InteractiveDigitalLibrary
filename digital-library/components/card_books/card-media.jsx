@@ -7,7 +7,6 @@ import ButtonPDf from '@/components/read/button-Pdf';
 import Comments from '../comments/Comments';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import Theme from '@/styles/theme';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
@@ -30,7 +29,8 @@ Data for the books will be taken from the data base.
 export default function ImgMediaCard({ resource_id, title, imageSrc, description, author }) {
   const { status, data: session } = useSession();
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false); // State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lookDescripcion, setMostrarDescripcion] = useState(false); 
   //show description
   const toggleDescripcion = () => {
     setMostrarDescripcion(!lookDescripcion);
