@@ -28,6 +28,6 @@ export default function Profile() {
   }
 
   return (
-    <div> Loading... </div> // Puedes mostrar un mensaje de carga mientras se verifica la sesión
+    <div> Loading... </div> // You can show a loading message while the session is being verified
   );
 }
