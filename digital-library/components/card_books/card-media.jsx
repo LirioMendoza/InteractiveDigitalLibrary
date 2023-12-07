@@ -18,7 +18,7 @@ const LOG_LEVELS = {
 
 /* 
 Description: Gives the format for every book that will be showing in the catalog. 
-Data for the books will be taken from books.json
+Data for the books will be taken from the data base.
 */
 
 export default function ImgMediaCard({ resource_id, title, imageSrc, description }) {

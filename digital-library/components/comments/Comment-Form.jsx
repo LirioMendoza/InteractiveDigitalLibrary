@@ -14,7 +14,7 @@ import { ThemeProvider } from '@mui/material/';
 Description: Handles every part of the comment Form.
 */
 
-const CommentForm = ({ addComment }) => {
+const CommentForm = ({ onAddComment }) => {
 
   const [rating, setRating] = useState(0); 
   const [title, setTitle] = useState('');
@@ -26,7 +26,7 @@ const CommentForm = ({ addComment }) => {
   };
 
   //Handling Submit Comment 
-  const handleSubmit = (e) => {
+  const handleAddComment = (e) => {
     e.preventDefault();
     console.info({level: "INFO", message: "Trying to submit comment form."});
     try {
@@ -34,8 +34,7 @@ const CommentForm = ({ addComment }) => {
       if (title.trim() === '' || comment.trim() === '' || rating < 0 || rating > 5) {
         throw new Error("Invalid arguments");
       }
-
-      addComment({ comment, title, rating });
+      onAddComment({ comment, title, rating });
       setComment('');
       setTitle('');
       setRating(0);
@@ -94,7 +93,15 @@ const CommentForm = ({ addComment }) => {
 
         {/* Add comment Button */}
   
-        <SubmitButton onClick={handleSubmit} label="Add comment"/>
+        <Button 
+            variant='contained' 
+            color='primary'
+            onClick={handleAddComment} 
+            fullWidth
+          >
+          Add Comment
+        </Button>
+
       
       
       </Box>

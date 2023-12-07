@@ -85,6 +85,7 @@ const CommentList = ({ comments }) => {
                     {comment.comment}
                   </Typography>
                 </CardContent>
+                
                 {/* Card Actions - Edit and Delete Buttons */}
                 <CardActions>
                   <Button

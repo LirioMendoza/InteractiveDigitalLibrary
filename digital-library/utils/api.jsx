@@ -22,6 +22,16 @@ export async function getComments(resource_id) {
     }
 }
 
+export async function addComment(resource_id, new_comment) {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/resources/${resource_id}/comments`, new_comment);
+        return response.data;
+    } catch(error) {
+        console.error('Error adding comment:', error);
+        throw error;
+    }
+}
+
 export async function addBook(new_book) {
     try {
         const response = await axios.post(`${API_BASE_URL}/books`, new_book);
