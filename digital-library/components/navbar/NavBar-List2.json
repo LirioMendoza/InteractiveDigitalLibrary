@@ -1,0 +1,16 @@
+[
+    {
+      "title": "Home",
+      "path": "/"
+    },
+    {
+        "title": "Catalog",
+        "path": "/books"
+    },
+  
+    {
+      "title": "Profile",
+      "path": "/profile"
+    }
+    
+]

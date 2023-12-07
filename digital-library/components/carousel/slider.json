@@ -1,0 +1,49 @@
+[
+    {
+        "id":1,
+        "image": "/images/Book1.jpg",
+        "title":" "
+    },
+     
+    {
+        "id":2,
+        "image": "/images/Book2.jpg",
+        "title":""
+
+    },
+
+    {
+        "id":3,
+        "image": "/images/Book3.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":4,
+        "image": "/images/Book4.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":5,
+        "image": "/images/Book5.jpg",
+        "title":" "
+
+    },
+
+    {
+        "id":5,
+        "image": "/images/Book6.jpg",
+        "title":" " 
+    },
+
+    {
+        "id":6,
+        "image": "/images/Book7.jpg",
+        "title":" " 
+
+    }
+
+]
