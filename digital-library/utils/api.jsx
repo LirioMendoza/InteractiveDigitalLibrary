@@ -32,12 +32,32 @@ export async function addComment(resource_id, new_comment) {
     }
 }
 
-export async function addBook(new_book) {
+export async function deleteComment(comment_id) {
     try {
-        const response = await axios.post(`${API_BASE_URL}/books`, new_book);
+        const response = await axios.delete(`${API_BASE_URL}/resources/comments/${comment_id}`);
         return response.data;
     } catch(error) {
-        console.error('Error adding book:', error);
+        console.error('Error deleting comment:', error);
+        throw error;
+    }
+}
+
+export async function addResource(new_resource) {
+    try {
+        const response = await axios.post(`${API_BASE_URL}/resources`, new_resource);
+        return response.data;
+    } catch(error) {
+        console.error('Error adding resource:', error);
+        throw error;
+    }
+}
+
+export async function getResourcePdf(resource_id) {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/resources/${resource_id}/pdf`);
+        return response.data
+    } catch(error){
+        console.error('Error fetching comments', error)
         throw error;
     }
 }

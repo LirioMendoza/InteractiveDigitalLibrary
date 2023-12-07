@@ -11,6 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Box, ThemeProvider, Dialog} from '@mui/material/';
 import Theme from '@/styles/theme';
 import CommentUpdateForm from './Comment-Update-Form';
+import { deleteComment } from '@/utils/api'; //API
 
 /* 
 Description: Gives the format that will be used for the comments.
@@ -54,9 +55,9 @@ const CommentList = ({ comments }) => {
   };
 
 
-  const handleDelete = (commentId) => {
-    const updatedComments = commentList.filter(comment => comment.id !== commentId);
-    setCommentList(updatedComments);
+  const handleDelete = async(commentId) => {
+    const deletedComment = await deleteComment(commentId);
+    setCommentList((prevComments) => prevComments.filter(comment => comment._id !== commentId));
     console.log(`Eliminar comentario con ID: ${commentId}`);
   };
 
@@ -92,7 +93,7 @@ const CommentList = ({ comments }) => {
                     size="small"
                     color="primary"
                     startIcon={<EditIcon />}
-                    onClick={() => handleEdit(comment.id)}
+                    onClick={() => handleEdit(comment._id)}
                   >
                     Editar
                   </Button>
@@ -100,7 +101,7 @@ const CommentList = ({ comments }) => {
                     size="small"
                     color="secondary"
                     startIcon={<DeleteIcon />} 
-                    onClick={() => handleDelete(comment.id)}
+                    onClick={() => handleDelete(comment._id)}
                   >
                     Eliminar
                   </Button>
